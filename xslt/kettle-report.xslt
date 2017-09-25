@@ -231,6 +231,23 @@
         </xsl:call-template>
     </xsl:template>
 
+    <xsl:template name="only-filename-from-object-id">
+        <xsl:param name="id"/>
+        <xsl:param name="separator" select="'/'"/>
+
+        <xsl:choose>
+            <xsl:when test="contains($id, $separator)">
+                <xsl:call-template name="only-filename-from-object-id">
+                    <xsl:with-param name="id" select="substring-after($id, $separator)"/>
+                    <xsl:with-param name="separator" select="$separator"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$id"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
     <xsl:template name="get-doc-uri-for-filename">
         <xsl:param name="step-or-job-entry"/>
         <xsl:variable name="type" select="local-name($step-or-job-entry)"/>
@@ -242,13 +259,48 @@
                 </xsl:when>
                 <!-- this is to support repository based etl -->
                 <xsl:otherwise>
+                    <!--
                     <xsl:variable name="prefix" select="concat($documentation-root, '/html', $step-or-job-entry/directory/text(), '/')"/>
+                    -->
+                    <xsl:variable name="prefix" select="concat($documentation-root, '/html/')"/>
                     <xsl:choose>
                         <xsl:when test="$step-or-job-entry/type/text()='TRANS'">
-                            <xsl:value-of select="concat($prefix, $step-or-job-entry/transname/text(), '.ktr.html')"/>
+                            <xsl:choose>
+                                <!-- If the transformation is referred using trans_object_id -->
+                                <xsl:when test="$step-or-job-entry/specification_method/text()='rep_ref'">
+                                <!-- <xsl:when test="$step-or-job-entry/trans_object_id/text()"> -->
+                                    <!-- <xsl:value-of select="concat($prefix, $step-or-job-entry/job_object_id/text(), '.html')"/> -->
+                                    <xsl:variable name="trans_object_id_name">
+                                        <xsl:call-template name="only-filename-from-object-id">
+                                            <xsl:with-param name="id" select="$step-or-job-entry/trans_object_id/text()"/>
+                                            <xsl:with-param name="separator" select="'/'"/>
+                                        </xsl:call-template>
+                                    </xsl:variable>
+                                    <xsl:value-of select="concat($prefix, $trans_object_id_name, '.html')"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="concat($prefix, $step-or-job-entry/transname/text(), '.ktr.html')"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="concat($prefix, $step-or-job-entry/jobname/text(), '.kjb.html')"/>
+                            <xsl:choose>
+                                <!-- If the job is referred using job_object_id -->
+                                <xsl:when test="$step-or-job-entry/specification_method/text() = 'rep_ref'">
+                                <!-- <xsl:when test="$step-or-job-entry/job_object_id/text()"> -->
+                                    <!-- <xsl:value-of select="concat($prefix, $step-or-job-entry/job_object_id/text(), '.html')"/> -->
+                                    <xsl:variable name="job_object_id_name">
+                                        <xsl:call-template name="only-filename-from-object-id">
+                                            <xsl:with-param name="id" select="$step-or-job-entry/job_object_id/text()"/>
+                                            <xsl:with-param name="separator" select="'/'"/>
+                                        </xsl:call-template>
+                                    </xsl:variable>
+                                    <xsl:value-of select="concat($prefix, $job_object_id_name, '.html')"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="concat($prefix, $step-or-job-entry/jobname/text(), '.kjb.html')"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:otherwise>
