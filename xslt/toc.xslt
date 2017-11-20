@@ -216,7 +216,8 @@
                 <xsl:attribute name="href">
                     <xsl:value-of select="concat('html', $relative-path, '.html')"/>
                 </xsl:attribute>
-                <xsl:value-of select="substring-before(@short_name, concat('.', @extension))"/>
+                <!-- <xsl:value-of select="substring-before(@short_name, concat('.', @extension))"/>  -->
+                <xsl:value-of select="substring-before($relative-path, concat('.', @extension))"/>
             </a>
         </li>
     </xsl:template>
@@ -257,8 +258,10 @@
             <xsl:when test="$files">
                 <ul>
                     <xsl:for-each select="$files">
+                        <!-- <xsl:sort
+                            select="translate(@short_name, $upper-case-alphabet, $lower-case-alphabet)"/> -->
                         <xsl:sort
-                            select="translate(@short_name, $upper-case-alphabet, $lower-case-alphabet)"/>
+                        	select="translate(substring-after(@full_name, $input-dir), $upper-case-alphabet, $lower-case-alphabet)"/>
                         <xsl:apply-templates select="."/>
                     </xsl:for-each>
                 </ul>
