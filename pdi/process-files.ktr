@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
     <name>process-files</name>
@@ -7,43 +6,409 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#47;</directory>
+    <directory>&#x2f;</directory>
     <parameters>
-        <parameter>
-            <name>INPUT_DIR</name>
-            <default_value>D:\Servers\biserver-ce-3.5.2.stable\biserver-ce\pentaho-solutions</default_value>
-            <description>null</description>
-        </parameter>
-        <parameter>
-            <name>OUTPUT_DIR</name>
-            <default_value>D:\tmp\kettle-cookbook-doc</default_value>
-            <description>null</description>
-        </parameter>
+      <parameter>
+        <name>INPUT_DIR</name>
+        <default_value>D&#x3a;&#x5c;Servers&#x5c;biserver-ce-3.5.2.stable&#x5c;biserver-ce&#x5c;pentaho-solutions</default_value>
+        <description>null</description>
+      </parameter>
+      <parameter>
+        <name>OUTPUT_DIR</name>
+        <default_value>D&#x3a;&#x5c;tmp&#x5c;kettle-cookbook-doc</default_value>
+        <description>null</description>
+      </parameter>
     </parameters>
     <log>
-<trans-log-table><connection/>
-<schema/>
-<table/>
-<size_limit_lines/>
-<interval/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>N</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>N</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></trans-log-table>
-<perf-log-table><connection/>
-<schema/>
-<table/>
-<interval/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
-<channel-log-table><connection/>
-<schema/>
-<table/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
-<step-log-table><connection/>
-<schema/>
-<table/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+      <trans-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <size_limit_lines/>
+        <interval/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>N</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STATUS</id>
+          <enabled>Y</enabled>
+          <name>STATUS</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>N</enabled>
+          <name>LINES_REJECTED</name>
+          <subject/>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>STARTDATE</id>
+          <enabled>Y</enabled>
+          <name>STARTDATE</name>
+        </field>
+        <field>
+          <id>ENDDATE</id>
+          <enabled>Y</enabled>
+          <name>ENDDATE</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>DEPDATE</id>
+          <enabled>Y</enabled>
+          <name>DEPDATE</name>
+        </field>
+        <field>
+          <id>REPLAYDATE</id>
+          <enabled>Y</enabled>
+          <name>REPLAYDATE</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>N</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+        <field>
+          <id>EXECUTING_SERVER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_SERVER</name>
+        </field>
+        <field>
+          <id>EXECUTING_USER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_USER</name>
+        </field>
+        <field>
+          <id>CLIENT</id>
+          <enabled>N</enabled>
+          <name>CLIENT</name>
+        </field>
+      </trans-log-table>
+      <perf-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <interval/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>SEQ_NR</id>
+          <enabled>Y</enabled>
+          <name>SEQ_NR</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>INPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>INPUT_BUFFER_ROWS</name>
+        </field>
+        <field>
+          <id>OUTPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>OUTPUT_BUFFER_ROWS</name>
+        </field>
+      </perf-log-table>
+      <channel-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>LOGGING_OBJECT_TYPE</id>
+          <enabled>Y</enabled>
+          <name>LOGGING_OBJECT_TYPE</name>
+        </field>
+        <field>
+          <id>OBJECT_NAME</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_NAME</name>
+        </field>
+        <field>
+          <id>OBJECT_COPY</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_COPY</name>
+        </field>
+        <field>
+          <id>REPOSITORY_DIRECTORY</id>
+          <enabled>Y</enabled>
+          <name>REPOSITORY_DIRECTORY</name>
+        </field>
+        <field>
+          <id>FILENAME</id>
+          <enabled>Y</enabled>
+          <name>FILENAME</name>
+        </field>
+        <field>
+          <id>OBJECT_ID</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_ID</name>
+        </field>
+        <field>
+          <id>OBJECT_REVISION</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_REVISION</name>
+        </field>
+        <field>
+          <id>PARENT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>PARENT_CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>ROOT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>ROOT_CHANNEL_ID</name>
+        </field>
+      </channel-log-table>
+      <step-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>N</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+      </step-log-table>
+      <metrics-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_DATE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_CODE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_CODE</name>
+        </field>
+        <field>
+          <id>METRICS_DESCRIPTION</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DESCRIPTION</name>
+        </field>
+        <field>
+          <id>METRICS_SUBJECT</id>
+          <enabled>Y</enabled>
+          <name>METRICS_SUBJECT</name>
+        </field>
+        <field>
+          <id>METRICS_TYPE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_TYPE</name>
+        </field>
+        <field>
+          <id>METRICS_VALUE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_VALUE</name>
+        </field>
+      </metrics-log-table>
     </log>
     <maxdate>
       <connection/>
@@ -71,17 +436,19 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-  <created_user/>
-  <created_date>2013&#47;04&#47;06 23:41:02.490</created_date>
-  <modified_user>-</modified_user>
-  <modified_date>2010&#47;11&#47;02 21:08:34.078</modified_date>
+    <created_user/>
+    <created_date>2013&#x2f;04&#x2f;06 23&#x3a;41&#x3a;02.490</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2017&#x2f;11&#x2f;20 01&#x3a;13&#x3a;44.074</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>update all files, don&apos;t look at file modification date</note>
+      <note>update all files, don&#x27;t look at file modification date</note>
       <xloc>760</xloc>
       <yloc>370</yloc>
-      <width>292</width>
+      <width>294</width>
       <heigth>25</heigth>
       <fontname>Arial</fontname>
       <fontsize>10</fontsize>
@@ -100,23 +467,180 @@
     </notepad>
   </notepads>
   <order>
-  <hop> <from>Get ${INPUT_DIR} and ${OUTPUT_DIR}</from><to>compare-files.ktr</to><enabled>Y</enabled> </hop>  <hop> <from>compare-files.ktr</from><to>dir diff</to><enabled>Y</enabled> </hop>  <hop> <from>compare-files.ktr</from><to>file diff</to><enabled>Y</enabled> </hop>  <hop> <from>compare-files.ktr</from><to>input dir</to><enabled>Y</enabled> </hop>  <hop> <from>compare-files.ktr</from><to>input file</to><enabled>Y</enabled> </hop>  <hop> <from>compare-files.ktr</from><to>output file</to><enabled>Y</enabled> </hop>  <hop> <from>input dir</from><to>create-index.ktr</to><enabled>Y</enabled> </hop>  <hop> <from>input file</from><to>create-index.ktr</to><enabled>Y</enabled> </hop>  <hop> <from>Get ${INPUT_DIR} and ${OUTPUT_DIR}</from><to>create-index.ktr</to><enabled>Y</enabled> </hop>  <hop> <from>file diff</from><to>Switch &#47; Case</to><enabled>Y</enabled> </hop>  <hop> <from>Switch &#47; Case</from><to>Delete file</to><enabled>Y</enabled> </hop>  <hop> <from>Switch &#47; Case</from><to>Lookup input lastmodified</to><enabled>Y</enabled> </hop>  <hop> <from>input file</from><to>Lookup input lastmodified</to><enabled>Y</enabled> </hop>  <hop> <from>Lookup input lastmodified</from><to>File updated?</to><enabled>Y</enabled> </hop>  <hop> <from>File updated?</from><to>Not updated</to><enabled>Y</enabled> </hop>  <hop> <from>Switch &#47; Case</from><to>new files</to><enabled>Y</enabled> </hop>  <hop> <from>File updated?</from><to>updated files</to><enabled>Y</enabled> </hop>  <hop> <from>updated files</from><to>files</to><enabled>Y</enabled> </hop>  <hop> <from>new files</from><to>files</to><enabled>Y</enabled> </hop>  <hop> <from>create-index.ktr</from><to>Dummy (do nothing)</to><enabled>Y</enabled> </hop>  <hop> <from>Dummy (do nothing)</from><to>create-transform-script.ktr</to><enabled>Y</enabled> </hop>  <hop> <from>Get ${INPUT_DIR} and ${OUTPUT_DIR}</from><to>create-transform-script.ktr</to><enabled>Y</enabled> </hop>  <hop> <from>dir diff</from><to>new directory?</to><enabled>Y</enabled> </hop>  <hop> <from>new directory?</from><to>Not a new directory</to><enabled>Y</enabled> </hop>  <hop> <from>new directory?</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>input file</from><to>post-process-files.ktr</to><enabled>Y</enabled> </hop>  <hop> <from>files</from><to>Get XSLT by file extension</to><enabled>Y</enabled> </hop>  <hop> <from>Get ${INPUT_DIR} and ${OUTPUT_DIR}</from><to>post-process-files.ktr</to><enabled>Y</enabled> </hop>  <hop> <from>Get XSLT by file extension</from><to>create-transform-script.ktr</to><enabled>Y</enabled> </hop>  <hop> <from>Lookup input lastmodified</from><to>updated files</to><enabled>N</enabled> </hop>  </order>
+    <hop>
+      <from>Get &#x24;&#x7b;INPUT_DIR&#x7d; and &#x24;&#x7b;OUTPUT_DIR&#x7d;</from>
+      <to>compare-files.ktr</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>compare-files.ktr</from>
+      <to>dir diff</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>compare-files.ktr</from>
+      <to>file diff</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>compare-files.ktr</from>
+      <to>input dir</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>compare-files.ktr</from>
+      <to>input file</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>compare-files.ktr</from>
+      <to>output file</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>input dir</from>
+      <to>create-index.ktr</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>input file</from>
+      <to>create-index.ktr</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get &#x24;&#x7b;INPUT_DIR&#x7d; and &#x24;&#x7b;OUTPUT_DIR&#x7d;</from>
+      <to>create-index.ktr</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>file diff</from>
+      <to>Switch &#x2f; Case</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Switch &#x2f; Case</from>
+      <to>Delete file</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Switch &#x2f; Case</from>
+      <to>Lookup input lastmodified</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>input file</from>
+      <to>Lookup input lastmodified</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Lookup input lastmodified</from>
+      <to>File updated&#x3f;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>File updated&#x3f;</from>
+      <to>Not updated</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Switch &#x2f; Case</from>
+      <to>new files</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>File updated&#x3f;</from>
+      <to>updated files</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>updated files</from>
+      <to>files</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>new files</from>
+      <to>files</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>create-index.ktr</from>
+      <to>Dummy &#x28;do nothing&#x29;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29;</from>
+      <to>create-transform-script.ktr</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get &#x24;&#x7b;INPUT_DIR&#x7d; and &#x24;&#x7b;OUTPUT_DIR&#x7d;</from>
+      <to>create-transform-script.ktr</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>dir diff</from>
+      <to>new directory&#x3f;</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>new directory&#x3f;</from>
+      <to>Not a new directory</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>new directory&#x3f;</from>
+      <to>Copy rows to result</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>input file</from>
+      <to>post-process-files.ktr</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>files</from>
+      <to>Get XSLT by file extension</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get &#x24;&#x7b;INPUT_DIR&#x7d; and &#x24;&#x7b;OUTPUT_DIR&#x7d;</from>
+      <to>post-process-files.ktr</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get XSLT by file extension</from>
+      <to>create-transform-script.ktr</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Lookup input lastmodified</from>
+      <to>updated files</to>
+      <enabled>N</enabled>
+    </hop>
+  </order>
   <step>
     <name>Copy rows to result</name>
     <type>RowsToResult</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>559</xloc>
       <yloc>478</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -124,11 +648,12 @@
     <type>ProcessFiles</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
     <sourcefilenamefield>file_full_name</sourcefilenamefield>
     <targetfilenamefield/>
     <operation_type>delete</operation_type>
@@ -136,74 +661,95 @@
     <overwritetargetfile>N</overwritetargetfile>
     <createparentfolder>N</createparentfolder>
     <simulate>N</simulate>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>456</xloc>
       <yloc>407</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
-    <name>Dummy (do nothing)</name>
+    <name>Dummy &#x28;do nothing&#x29;</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>784</xloc>
       <yloc>193</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
-    <name>File updated?</name>
+    <name>File updated&#x3f;</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
 <send_true_to>updated files</send_true_to>
 <send_false_to>Not updated</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
  <leftvalue>input_file_lastmodified</leftvalue>
- <function>&gt;=</function>
+ <function>&#x3e;&#x3d;</function>
  <rightvalue>file_lastmodified</rightvalue>
  </condition>
     </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>680</xloc>
       <yloc>360</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
-    <name>Get ${INPUT_DIR} and ${OUTPUT_DIR}</name>
+    <name>Get &#x24;&#x7b;INPUT_DIR&#x7d; and &#x24;&#x7b;OUTPUT_DIR&#x7d;</name>
     <type>GetVariable</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
     <fields>
       <field>
         <name>output_dir</name>
-        <variable>${OUTPUT_DIR}</variable>
+        <variable>&#x24;&#x7b;OUTPUT_DIR&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -215,7 +761,7 @@
       </field>
       <field>
         <name>input_dir</name>
-        <variable>${INPUT_DIR}</variable>
+        <variable>&#x24;&#x7b;INPUT_DIR&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -227,7 +773,7 @@
       </field>
       <field>
         <name>file_separator</name>
-        <variable>${file.separator}</variable>
+        <variable>&#x24;&#x7b;file.separator&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -238,12 +784,18 @@
         <trim_type>none</trim_type>
       </field>
     </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>257</xloc>
       <yloc>17</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -251,11 +803,12 @@
     <type>ValueMapper</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
     <field_to_use>input_file_extension</field_to_use>
     <target_field>xslt_name</target_field>
     <non_match_default/>
@@ -285,12 +838,18 @@
         <target_value>xml-report.xslt</target_value>
       </field>
     </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>1026</xloc>
       <yloc>323</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -298,11 +857,12 @@
     <type>StreamLookup</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
     <from>input file</from>
     <input_sorted>N</input_sorted>
     <preserve_memory>Y</preserve_memory>
@@ -426,12 +986,18 @@
         <type>String</type>
       </value>
     </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>570</xloc>
       <yloc>323</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -439,17 +1005,24 @@
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>456</xloc>
       <yloc>558</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -457,29 +1030,37 @@
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>780</xloc>
       <yloc>420</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
-    <name>Switch &#47; Case</name>
+    <name>Switch &#x2f; Case</name>
     <type>SwitchCase</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
 <fieldname>file_diff</fieldname>
 <use_contains>N</use_contains>
 <case_value_type>String</case_value_type>
@@ -493,12 +1074,18 @@
 <target_step>Lookup input lastmodified</target_step>
 </case><case><value>new</value>
 <target_step>new files</target_step>
-</case></cases>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+</case></cases>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>456</xloc>
       <yloc>323</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -506,11 +1093,12 @@
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
     <connection/>
     <schema/>
     <table>wcf1009</table>
@@ -962,12 +1550,18 @@
           <stream_name>TK_MM</stream_name>
         </field>
     </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>808</xloc>
       <yloc>110</yloc>
       <draw>N</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -975,21 +1569,22 @@
     <type>Mapping</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <specification_method>rep_name</specification_method>
     <trans_object_id/>
-    <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}&#47;compare-files.ktr</filename>
-    <directory_path/>
+    <trans_name>compare-files</trans_name>
+    <filename/>
+    <directory_path>&#x2f;</directory_path>
     <mappings>
       <input>
-    <mapping>    <input_step>Get ${INPUT_DIR} and ${OUTPUT_DIR}</input_step>
-    <output_step>input_dir &#47; output_dir</output_step>
-    <main_path>N</main_path>
+    <mapping>    <input_step>Get &#x24;&#x7b;INPUT_DIR&#x7d; and &#x24;&#x7b;OUTPUT_DIR&#x7d;</input_step>
+    <output_step>input_dir &#x2f; output_dir</output_step>
+    <main_path>Y</main_path>
     <rename_on_output>N</rename_on_output>
     <description/>
     </mapping>      </input>
@@ -1025,12 +1620,18 @@
     </mappings>
     <allow_multiple_input>N</allow_multiple_input>
     <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>257</xloc>
       <yloc>131</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1038,38 +1639,39 @@
     <type>Mapping</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <specification_method>rep_name</specification_method>
     <trans_object_id/>
-    <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}&#47;create-index.ktr</filename>
-    <directory_path/>
+    <trans_name>create-index</trans_name>
+    <filename/>
+    <directory_path>&#x2f;</directory_path>
     <mappings>
       <input>
     <mapping>    <input_step>input dir</input_step>
     <output_step>folder Mapping input</output_step>
-    <main_path>N</main_path>
+    <main_path>Y</main_path>
     <rename_on_output>N</rename_on_output>
     <description/>
     </mapping>    <mapping>    <input_step>input file</input_step>
     <output_step>file Mapping input</output_step>
-    <main_path>N</main_path>
+    <main_path>Y</main_path>
     <rename_on_output>N</rename_on_output>
     <description/>
-    </mapping>    <mapping>    <input_step>Get ${INPUT_DIR} and ${OUTPUT_DIR}</input_step>
-    <output_step>input_dir &#47; output_dir</output_step>
+    </mapping>    <mapping>    <input_step>Get &#x24;&#x7b;INPUT_DIR&#x7d; and &#x24;&#x7b;OUTPUT_DIR&#x7d;</input_step>
+    <output_step>input_dir &#x2f; output_dir</output_step>
     <main_path>Y</main_path>
     <rename_on_output>N</rename_on_output>
     <description/>
     </mapping>      </input>
       <output>
     <mapping>    <input_step>Mapping output specification</input_step>
-    <output_step>Dummy (do nothing)</output_step>
-    <main_path>N</main_path>
+    <output_step>Dummy &#x28;do nothing&#x29;</output_step>
+    <main_path>Y</main_path>
     <rename_on_output>N</rename_on_output>
     <description/>
     </mapping>      </output>
@@ -1078,12 +1680,18 @@
     </mappings>
     <allow_multiple_input>N</allow_multiple_input>
     <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>687</xloc>
       <yloc>193</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1091,25 +1699,26 @@
     <type>Mapping</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <specification_method>rep_name</specification_method>
     <trans_object_id/>
-    <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}&#47;create-transform-script.ktr</filename>
-    <directory_path/>
+    <trans_name>create-transform-script</trans_name>
+    <filename/>
+    <directory_path>&#x2f;</directory_path>
     <mappings>
       <input>
-    <mapping>    <input_step>Dummy (do nothing)</input_step>
+    <mapping>    <input_step>Dummy &#x28;do nothing&#x29;</input_step>
     <output_step>index.xml</output_step>
     <main_path>Y</main_path>
     <rename_on_output>N</rename_on_output>
     <description/>
-    </mapping>    <mapping>    <input_step>Get ${INPUT_DIR} and ${OUTPUT_DIR}</input_step>
-    <output_step>input_dir &#47; output_dir</output_step>
+    </mapping>    <mapping>    <input_step>Get &#x24;&#x7b;INPUT_DIR&#x7d; and &#x24;&#x7b;OUTPUT_DIR&#x7d;</input_step>
+    <output_step>input_dir &#x2f; output_dir</output_step>
     <main_path>Y</main_path>
     <rename_on_output>N</rename_on_output>
     <description/>
@@ -1126,12 +1735,18 @@
     </mappings>
     <allow_multiple_input>N</allow_multiple_input>
     <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>1337</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1139,17 +1754,24 @@
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>373</xloc>
       <yloc>478</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1157,17 +1779,24 @@
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>373</xloc>
       <yloc>323</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1175,17 +1804,24 @@
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>908</xloc>
       <yloc>323</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1193,17 +1829,24 @@
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>373</xloc>
       <yloc>131</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1211,45 +1854,59 @@
     <type>Dummy</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>372</xloc>
       <yloc>193</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
-    <name>new directory?</name>
+    <name>new directory&#x3f;</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
 <send_true_to>Copy rows to result</send_true_to>
 <send_false_to>Not a new directory</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
  <leftvalue>directory_diff</leftvalue>
- <function>=</function>
+ <function>&#x3d;</function>
  <rightvalue/>
  <value><name>constant</name><type>String</type><text>new</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>456</xloc>
       <yloc>478</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1257,30 +1914,31 @@
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
     <fields>      <field>        <name>file_full_name</name>
         <rename>input_file</rename>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>      <field>        <name>file_extension</name>
         <rename>input_file_extension</rename>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>      <field>        <name>output_file</name>
         <rename>output_file</rename>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>790</xloc>
       <yloc>520</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1288,17 +1946,24 @@
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>223</xloc>
       <yloc>481</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1306,16 +1971,17 @@
     <type>Mapping</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <specification_method>rep_name</specification_method>
     <trans_object_id/>
-    <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}&#47;post-process-files.ktr</filename>
-    <directory_path/>
+    <trans_name>post-process-files</trans_name>
+    <filename/>
+    <directory_path>&#x2f;</directory_path>
     <mappings>
       <input>
     <mapping>    <input_step>input file</input_step>
@@ -1323,8 +1989,8 @@
     <main_path>Y</main_path>
     <rename_on_output>N</rename_on_output>
     <description/>
-    </mapping>    <mapping>    <input_step>Get ${INPUT_DIR} and ${OUTPUT_DIR}</input_step>
-    <output_step>input_dir &#47; output_dir</output_step>
+    </mapping>    <mapping>    <input_step>Get &#x24;&#x7b;INPUT_DIR&#x7d; and &#x24;&#x7b;OUTPUT_DIR&#x7d;</input_step>
+    <output_step>input_dir &#x2f; output_dir</output_step>
     <main_path>Y</main_path>
     <rename_on_output>N</rename_on_output>
     <description/>
@@ -1336,12 +2002,18 @@
     </mappings>
     <allow_multiple_input>N</allow_multiple_input>
     <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>683</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step>
@@ -1349,35 +2021,36 @@
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
     <fields>      <field>        <name>input_file_full_name</name>
         <rename>input_file</rename>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>      <field>        <name>input_file_extension</name>
         <rename>input_file_extension</rename>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>      <field>        <name>file_full_name</name>
         <rename>output_file</rename>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>780</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
-      </GUI>
+    </GUI>
     </step>
 
   <step_error_handling>
   </step_error_handling>
-   <slave-step-copy-partition-distribution>
-</slave-step-copy-partition-distribution>
-   <slave_transformation>N</slave_transformation>
+  <slave-step-copy-partition-distribution>
+  </slave-step-copy-partition-distribution>
+  <slave_transformation>N</slave_transformation>
 </transformation>

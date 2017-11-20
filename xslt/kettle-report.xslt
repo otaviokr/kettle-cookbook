@@ -29,7 +29,7 @@
     Boston, MA 02111-1307 USA
 
 -->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:import href="shared.xslt"/>
     <xsl:import href="file.xslt"/>
@@ -262,7 +262,7 @@
                     <!--
                     <xsl:variable name="prefix" select="concat($documentation-root, '/html', $step-or-job-entry/directory/text(), '/')"/>
                     -->
-                    <xsl:variable name="prefix" select="concat($documentation-root, '/html/')"/>
+                    <xsl:variable name="prefix" select="concat($documentation-root, '/html')"/>
                     <xsl:choose>
                         <xsl:when test="$step-or-job-entry/type/text()='TRANS'">
                             <xsl:choose>
@@ -276,10 +276,29 @@
                                             <xsl:with-param name="separator" select="'/'"/>
                                         </xsl:call-template>
                                     </xsl:variable>
-                                    <xsl:value-of select="concat($prefix, $trans_object_id_name, '.html')"/>
+                                    <xsl:value-of select="concat($prefix, '/', $trans_object_id_name, '.html')"/>
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <xsl:value-of select="concat($prefix, $step-or-job-entry/transname/text(), '.ktr.html')"/>
+                                    <xsl:value-of select="concat($prefix, '/', $step-or-job-entry/transname/text(), '.ktr.html')"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:when>
+                        <xsl:when test="$step-or-job-entry/type/text()='Mapping'">
+                        	<xsl:choose>
+                                <!-- If the transformation is referred using a relative path from repository -->
+                                <xsl:when test="$step-or-job-entry/specification_method/text()='rep_name'">
+                                	<xsl:choose>
+		                                <!-- If transformation is in the relative root path, ignore directory field value -->
+		                                <xsl:when test="ends-with($step-or-job-entry/directory_path/text(), '/')">
+                                			<xsl:value-of select="concat($prefix, $step-or-job-entry/directory_path/text(), $step-or-job-entry/trans_name/text(), '.ktr.html')"/>
+                                		</xsl:when>
+                                		<xsl:otherwise>
+                                			<xsl:value-of select="concat($prefix, $step-or-job-entry/directory_path/text(), 'CAIUNOOTHERWISE/', $step-or-job-entry/trans_name/text(), '.html')"/>
+                                		</xsl:otherwise>
+                                	</xsl:choose>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="concat($prefix, '/', $step-or-job-entry/transname/text(), '.ktr.html')"/>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:when>
@@ -295,10 +314,10 @@
                                             <xsl:with-param name="separator" select="'/'"/>
                                         </xsl:call-template>
                                     </xsl:variable>
-                                    <xsl:value-of select="concat($prefix, $job_object_id_name, '.html')"/>
+                                    <xsl:value-of select="concat($prefix, '/', $job_object_id_name, '.html')"/>
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <xsl:value-of select="concat($prefix, $step-or-job-entry/jobname/text(), '.kjb.html')"/>
+                                    <xsl:value-of select="concat($prefix, '/', $step-or-job-entry/jobname/text(), '.kjb.html')"/>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:otherwise>
@@ -481,7 +500,7 @@
     <xsl:template name="variable-list">
         <xsl:variable name="nodes-using-variables" select="$document//*[contains(text(), '${')]"/>
         <xsl:variable name="list">
-            <xsl:for-each select="$nodes-using-variables">
+            <xsl:for-each select="$nodes-using-variables[0]">
                 <xsl:call-template name="get-variables">
                     <xsl:with-param name="text" select="text()"/>
                 </xsl:call-template>
@@ -951,9 +970,9 @@
         <xsl:param name="table"/>
         <h4>
             <xsl:choose>
-                <xsl:when test="name($table)='field'">Fields</xsl:when>
+                <xsl:when test="name($table[0])='field'">Fields</xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="name($table)"/>
+                    <xsl:value-of select="name($table[0])"/>
                 </xsl:otherwise>
             </xsl:choose>
         </h4>

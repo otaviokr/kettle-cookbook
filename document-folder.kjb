@@ -8,27 +8,12 @@
   <created_user>-</created_user>
   <created_date>2010&#x2f;10&#x2f;06 01&#x3a;02&#x3a;24.031</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;20 01&#x3a;04&#x3a;25.595</modified_date>
+  <modified_date>2017&#x2f;11&#x2f;19 02&#x3a;37&#x3a;19.479</modified_date>
     <parameters>
       <parameter>
         <name>INPUT_DIR</name>
         <default_value>D&#x3a;&#x5c;Development&#x5c;Eclipse&#x5c;Personal&#x5c;projects&#x5c;kettle-cookbook&#x5c;pdi</default_value>
         <description>Directory where the BI content &#x28;ktr, kjb, xaction etc.&#x29; files reside</description>
-      </parameter>
-      <parameter>
-        <name>Internal.Job.Filename.Directory</name>
-        <default_value>&#x24;&#x7b;INPUT_DIR&#x7d;</default_value>
-        <description/>
-      </parameter>
-      <parameter>
-        <name>Internal.Job.Filename.Name</name>
-        <default_value>document-folder.kjb</default_value>
-        <description/>
-      </parameter>
-      <parameter>
-        <name>Internal.Transformation.Filename.Directory</name>
-        <default_value>D&#x3a;&#x5c;Development&#x5c;Eclipse&#x5c;Personal&#x5c;projects&#x5c;kettle-cookbook</default_value>
-        <description>This value should not change, after being set during installation.</description>
       </parameter>
       <parameter>
         <name>OUTPUT_DIR</name>
@@ -359,14 +344,13 @@
       <yloc>228</yloc>
     </entry>
     <entry>
-      <name>process-files</name>
+      <name>process-files.ktr</name>
       <description>Transformation</description>
       <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
+      <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename/>
-      <transname>process-files</transname>
-      <directory>&#x2f;</directory>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;process-files.ktr</filename>
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -398,11 +382,10 @@
       <name>create-output-subdir</name>
       <description>Job</description>
       <type>JOB</type>
-      <specification_method>rep_name</specification_method>
+      <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename/>
-      <jobname>create-output-subdir</jobname>
-      <directory>&#x2f;</directory>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;create-output-subdir.kjb</filename>
+      <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>Y</params_from_previous>
       <exec_per_row>Y</exec_per_row>
@@ -537,14 +520,13 @@
       <yloc>586</yloc>
     </entry>
     <entry>
-      <name>substitute-variables-in-parameters</name>
+      <name>substitute-variables-in-parameters.ktr</name>
       <description>Transformation</description>
       <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
+      <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename/>
-      <transname>substitute-variables-in-parameters</transname>
-      <directory>&#x2f;</directory>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;substitute-variables-in-parameters.ktr</filename>
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -575,7 +557,7 @@
   </entries>
   <hops>
     <hop>
-      <from>process-files</from>
+      <from>process-files.ktr</from>
       <to>create-output-subdir</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -585,7 +567,7 @@
     </hop>
     <hop>
       <from>Create &#x24;&#x7b;OUTPUT_DIR&#x7d; and Copy Template</from>
-      <to>process-files</to>
+      <to>process-files.ktr</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -666,7 +648,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>substitute-variables-in-parameters</to>
+      <to>substitute-variables-in-parameters.ktr</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -674,7 +656,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>substitute-variables-in-parameters</from>
+      <from>substitute-variables-in-parameters.ktr</from>
       <to>Create &#x24;&#x7b;OUTPUT_DIR&#x7d; and Copy Template</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
