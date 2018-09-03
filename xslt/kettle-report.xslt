@@ -34,6 +34,9 @@
     <xsl:import href="shared.xslt"/>
     <xsl:import href="file.xslt"/>
     <xsl:import href="io_steps.xslt"/>
+    
+    <xsl:param name="param_width" select="param_width"/>
+    <xsl:param name="param_height" select="param_height"/>
 
     <xsl:variable name="item-type">
         <xsl:choose>
@@ -273,10 +276,10 @@
                                 	<xsl:choose>
 		                                <!-- If transformation is in the relative root path, ignore directory field value -->
 		                                <xsl:when test="ends-with($step-or-job-entry/directory/text(), '/')">
-                                			<xsl:value-of select="concat($prefix, $step-or-job-entry/directory/text(), $step-or-job-entry/transname/text(), '.ktr.html')"/>
+                                			<xsl:value-of select="concat($prefix, $step-or-job-entry/directory/text(), '/', $step-or-job-entry/transname/text(), '.ktr.html')"/>
                                 		</xsl:when>
                                 		<xsl:otherwise>
-                                			<xsl:value-of select="concat($prefix, $step-or-job-entry/directory/text(), $step-or-job-entry/transname/text(), '.html')"/>
+                                			<xsl:value-of select="concat($prefix, $step-or-job-entry/directory/text(), '/', $step-or-job-entry/transname/text(), '.ktr.html')"/>
                                 		</xsl:otherwise>
                                 	</xsl:choose>
                                 </xsl:when>
@@ -292,10 +295,10 @@
                                 	<xsl:choose>
 		                                <!-- If transformation is in the relative root path, ignore directory field value -->
 		                                <xsl:when test="ends-with($step-or-job-entry/directory_path/text(), '/')">
-                                			<xsl:value-of select="concat($prefix, $step-or-job-entry/directory_path/text(), $step-or-job-entry/trans_name/text(), '.ktr.html')"/>
+                                			<xsl:value-of select="concat($prefix, $step-or-job-entry/directory_path/text(), '/', $step-or-job-entry/trans_name/text(), '.ktr.html')"/>
                                 		</xsl:when>
                                 		<xsl:otherwise>
-                                			<xsl:value-of select="concat($prefix, $step-or-job-entry/directory_path/text(), $step-or-job-entry/trans_name/text(), '.html')"/>
+                                			<xsl:value-of select="concat($prefix, $step-or-job-entry/directory_path/text(), '/', $step-or-job-entry/trans_name/text(), 'BBBB.html')"/>
                                 		</xsl:otherwise>
                                 	</xsl:choose>
                                 </xsl:when>
@@ -314,7 +317,7 @@
                                             <xsl:with-param name="separator" select="'/'"/>
                                         </xsl:call-template>
                                     </xsl:variable>
-                                    <xsl:value-of select="concat($prefix, '/', $job_object_id_name, '.html')"/>
+                                    <xsl:value-of select="concat($prefix, '/', $job_object_id_name, 'CCC.html')"/>
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <xsl:value-of select="concat($prefix, $step-or-job-entry/directory/text(), '/', $step-or-job-entry/jobname/text(), '.kjb.html')"/>
@@ -1092,18 +1095,41 @@
         </h2>
         <div class="diagram" id="canvas">
             <xsl:attribute name="style">
-          width: <xsl:value-of
-                    select="($max-xloc - $min-xloc) + 128"/>px;
-          height: <xsl:value-of
-                    select="($max-yloc - $min-yloc) + 128"/>px;
+                width: <xsl:choose>
+                    <xsl:when test="$param_width > $max-xloc">
+                        <xsl:value-of select="($param_width - $min-xloc) + 128"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="($max-xloc - $min-xloc) + 128"/>
+                    </xsl:otherwise>
+                </xsl:choose>px;
+                height: <xsl:choose>
+                    <xsl:when test="$param_height > $max-yloc">
+                        <xsl:value-of select="($param_height - $min-yloc) + 128"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="($max-yloc - $min-yloc) + 128"/>
+                    </xsl:otherwise>
+                </xsl:choose>px;
       </xsl:attribute>
             <div class="diagram" id="thediagram">
                 <xsl:attribute name="style">
-              width: <xsl:value-of
-                        select="($max-xloc - $min-xloc) + 128"
-                        />px;
-              height: <xsl:value-of
-                        select="($max-yloc - $min-yloc) + 128"/>px;
+              width: <xsl:choose>
+                    <xsl:when test="$param_width > $max-xloc">
+                        <xsl:value-of select="($param_width - $min-xloc) + 128"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="($max-xloc - $min-xloc) + 128"/>
+                    </xsl:otherwise>
+                </xsl:choose>px;
+                height: <xsl:choose>
+                    <xsl:when test="$param_height > $max-yloc">
+                        <xsl:value-of select="($param_height - $min-yloc) + 128"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="($max-yloc - $min-yloc) + 128"/>
+                    </xsl:otherwise>
+                </xsl:choose>px;
           </xsl:attribute>
                 <xsl:for-each select="$steps">
                     <xsl:variable name="type" select="type/text()"/>
@@ -1348,18 +1374,41 @@
         </h2>
         <div class="diagram" id="canvas">
             <xsl:attribute name="style">
-            width: <xsl:value-of
-                    select="($max-xloc - $min-xloc) + 128"/>px;
-            height: <xsl:value-of
-                    select="($max-yloc - $min-yloc) + 128"/>px;
+            width: <xsl:choose>
+                    <xsl:when test="$param_width > $max-xloc">
+                        <xsl:value-of select="($param_width - $min-xloc) + 128"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="($max-xloc - $min-xloc) + 128"/>
+                    </xsl:otherwise>
+                </xsl:choose>px;
+            height: <xsl:choose>
+                    <xsl:when test="$param_height > $max-yloc">
+                        <xsl:value-of select="($param_height - $min-yloc) + 128"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="($max-yloc - $min-yloc) + 128"/>
+                    </xsl:otherwise>
+                </xsl:choose>px;
         </xsl:attribute>
             <div class="diagram" id="thediagram">
                 <xsl:attribute name="style">
-              width: <xsl:value-of
-                        select="($max-xloc - $min-xloc) + 128"
-                        />px;
-              height: <xsl:value-of
-                        select="($max-yloc - $min-yloc) + 128"/>px;
+              width: <xsl:choose>
+                    <xsl:when test="$param_width > $max-xloc">
+                        <xsl:value-of select="($param_width - $min-xloc) + 128"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="($max-xloc - $min-xloc) + 128"/>
+                    </xsl:otherwise>
+                </xsl:choose>px;
+              height: <xsl:choose>
+                    <xsl:when test="$param_height > $max-yloc">
+                        <xsl:value-of select="($param_height - $min-yloc) + 128"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="($max-yloc - $min-yloc) + 128"/>
+                    </xsl:otherwise>
+                </xsl:choose>px;
           </xsl:attribute>
                 <xsl:for-each select="$entries">
                     <xsl:variable name="type" select="type/text()"/>

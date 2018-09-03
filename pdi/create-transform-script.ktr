@@ -1,21 +1,27 @@
 <transformation>
   <info>
     <name>create-transform-script</name>
-    <description/>
-    <extended_description/>
-    <trans_version/>
+    <description />
+    <extended_description />
+    <trans_version />
     <trans_type>Normal</trans_type>
-    <directory>&#x2f;</directory>
+    <trans_status>0</trans_status>
+    <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>${Internal.Job.Filename.Directory}</name>
+        <default_value>undefined_job_filename_dir</default_value>
+        <description />
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <size_limit_lines/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -40,37 +46,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>N</enabled>
           <name>LINES_REJECTED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>ERRORS</id>
@@ -124,11 +130,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -206,10 +212,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -272,10 +278,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -348,10 +354,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -400,9 +406,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection/>
-      <table/>
-      <field/>
+      <connection />
+      <table />
+      <field />
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -413,10 +419,10 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file/>
+    <shared_objects_file />
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
-    <step_performance_capturing_size_limit/>
+    <step_performance_capturing_size_limit />
     <dependencies>
     </dependencies>
     <partitionschemas>
@@ -425,11 +431,11 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-    <created_user/>
-    <created_date>2013&#x2f;06&#x2f;11 17&#x3a;51&#x3a;33.223</created_date>
+    <created_user />
+    <created_date>2013/06/11 17:51:33.223</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;20 01&#x3a;26&#x3a;16.236</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2018/09/03 12:05:37.715</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -437,22 +443,22 @@
   <order>
     <hop>
       <from>Get Saxon Jar</from>
-      <to>filename -&#x3e; saxon.jar</to>
+      <to>filename -> saxon.jar</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>is windows&#x3f;</from>
+      <from>is windows?</from>
       <to>.bat</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>is windows&#x3f;</from>
+      <from>is windows?</from>
       <to>.sh</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>match windows</from>
-      <to>is windows&#x3f;</to>
+      <to>is windows?</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -461,18 +467,18 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>command lines &#x2f; scripts</from>
+      <from>command lines / scripts</from>
       <to>Combine streams</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>filename -&#x3e; saxon.jar</from>
-      <to>Join Rows &#x28;cartesian product&#x29; 2</to>
+      <from>filename -> saxon.jar</from>
+      <to>Join Rows (cartesian product) 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>input_dir &#x2f; output_dir</from>
-      <to>Join Rows &#x28;cartesian product&#x29; 2</to>
+      <from>input_dir / output_dir</from>
+      <to>Join Rows (cartesian product) 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -487,12 +493,12 @@
     </hop>
     <hop>
       <from>join streams</from>
-      <to>Join Rows &#x28;cartesian product&#x29; 2</to>
+      <to>Join Rows (cartesian product) 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Join Rows &#x28;cartesian product&#x29; 2</from>
-      <to>command lines &#x2f; scripts</to>
+      <from>Join Rows (cartesian product) 2</from>
+      <to>command lines / scripts</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -502,16 +508,16 @@
     </hop>
     <hop>
       <from>index.xml</from>
-      <to>Join Rows &#x28;cartesian product&#x29; 2</to>
+      <to>Join Rows (cartesian product) 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>command lines &#x2f; scripts</from>
+      <from>command lines / scripts</from>
       <to>IS_WINDOWS, FULL_TRANSFORM_SCRIPT</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>input_dir &#x2f; output_dir</from>
+      <from>input_dir / output_dir</from>
       <to>file_separator</to>
       <enabled>Y</enabled>
     </hop>
@@ -556,12 +562,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>files</from>
-      <to>Join streams 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>input_dir &#x2f; output_dir</from>
+      <from>input_dir / output_dir</from>
       <to>Get Saxon Jar</to>
       <enabled>Y</enabled>
     </hop>
@@ -575,33 +576,83 @@
       <to>transform script</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Calculate total size of notepads</from>
+      <to>Get highest (x,y) values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get highest (x,y) values</from>
+      <to>Keep only the relevant fields</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Keep only the relevant fields</from>
+      <to>Join streams 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>files</from>
+      <to>Check if job or trans</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Check if job or trans</from>
+      <to>Parse the file according to its type</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Parse the file according to its type</from>
+      <to>Parse notepads info for jobs</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Parse notepads info for jobs</from>
+      <to>Avoid null results</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Avoid null results</from>
+      <to>Calculate total size of notepads</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Parse the file according to its type</from>
+      <to>Parse notepads info for trans</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Parse notepads info for trans</from>
+      <to>Avoid null results</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>.bat</name>
     <type>Constant</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>transform-script-extension</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <nullif>bat</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -613,34 +664,33 @@
       <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>.sh</name>
     <type>Constant</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>transform-script-extension</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <nullif>sh</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -652,33 +702,32 @@
       <yloc>83</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Calculator</name>
     <type>Calculator</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <calculation>
       <field_name>quote</field_name>
       <calc_type>CONSTANT</calc_type>
-      <field_a>&#x22;</field_a>
-      <field_b/>
-      <field_c/>
+      <field_a>"</field_a>
+      <field_b />
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>Y</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>quoted_output_file</field_name>
@@ -690,10 +739,10 @@
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>quoted_index</field_name>
@@ -705,25 +754,25 @@
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>xslt_full_file_name</field_name>
       <calc_type>ADD</calc_type>
       <field_a>xslt-dir</field_a>
       <field_b>xslt_name</field_b>
-      <field_c/>
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>Y</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>quoted_xsl</field_name>
@@ -735,10 +784,10 @@
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>quoted_input_file</field_name>
@@ -750,40 +799,40 @@
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>Y</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
-      <field_name>param_filename&#x3d;</field_name>
+      <field_name>param_filename=</field_name>
       <calc_type>CONSTANT</calc_type>
-      <field_a>param_filename&#x3d;</field_a>
-      <field_b/>
-      <field_c/>
+      <field_a>param_filename=</field_a>
+      <field_b />
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>Y</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>param</field_name>
       <calc_type>ADD</calc_type>
-      <field_a>param_filename&#x3d;</field_a>
+      <field_a>param_filename=</field_a>
       <field_b>quoted_input_file</field_b>
-      <field_c/>
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>quoted_java_command</field_name>
@@ -795,10 +844,10 @@
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>quoted_saxon.jar</field_name>
@@ -810,42 +859,102 @@
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>java-options</field_name>
       <calc_type>CONSTANT</calc_type>
       <field_a>-Xms256M -Xmx1024M -jar</field_a>
-      <field_b/>
-      <field_c/>
+      <field_b />
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>saxon-options</field_name>
       <calc_type>CONSTANT</calc_type>
       <field_a>-o</field_a>
-      <field_b/>
-      <field_c/>
+      <field_b />
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
-    <cluster_schema/>
+    <calculation>
+      <field_name>param_width=</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>param_width=</field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>param_width</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>param_width=</field_a>
+      <field_b>max_width</field_b>
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>param_height=</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>param_height=</field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>param_height</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>param_height=</field_a>
+      <field_b>max_height</field_b>
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -853,36 +962,35 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>940</xloc>
-      <yloc>520</yloc>
+      <xloc>928</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Combine streams</name>
     <type>JoinRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <cache_size>500</cache_size>
-      <main>Join streams 2</main>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <cache_size>500</cache_size>
+    <main>Join streams 2</main>
     <compare>
-<condition>
- <negated>N</negated>
- <leftvalue/>
- <function>&#x3d;</function>
- <rightvalue/>
- </condition>
+      <condition>
+        <negated>N</negated>
+        <leftvalue />
+        <function>=</function>
+        <rightvalue />
+      </condition>
     </compare>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -894,18 +1002,17 @@
       <yloc>521</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Get Saxon Jar</name>
     <type>GetFileNames</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <filter>
       <filterfiletype>all_files</filterfiletype>
@@ -914,20 +1021,20 @@
     <rownum>N</rownum>
     <isaddresult>Y</isaddresult>
     <filefield>N</filefield>
-    <rownum_field/>
+    <rownum_field />
     <filename_Field>saxon</filename_Field>
-    <wildcard_Field/>
-    <exclude_wildcard_Field/>
+    <wildcard_Field />
+    <exclude_wildcard_Field />
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>&#x24;&#x7b;user.dir&#x7d;&#x2f;lib&#x2f;</name>
-      <filemask>saxon-.&#x2a;&#x5c;.jar</filemask>
-      <exclude_filemask>.&#x2a;dom.&#x2a;</exclude_filemask>
+      <name>${user.dir}/lib/</name>
+      <filemask>saxon-.*\.jar</filemask>
+      <exclude_filemask>.*dom.*</exclude_filemask>
       <file_required>Y</file_required>
       <include_subfolders>N</include_subfolders>
     </file>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -939,35 +1046,34 @@
       <yloc>269</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>IS_WINDOWS, FULL_TRANSFORM_SCRIPT</name>
     <type>SetVariable</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <field_name>is_windows</field_name>
         <variable_name>IS_WINDOWS</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
+        <default_value />
+      </field>
       <field>
         <field_name>full_transform_script</field_name>
         <variable_name>FULL_TRANSFORM_SCRIPT</variable_name>
         <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      </fields>
+        <default_value />
+      </field>
+    </fields>
     <use_formatting>Y</use_formatting>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -979,32 +1085,31 @@
       <yloc>200</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Join Rows &#x28;cartesian product&#x29; 2</name>
+    <name>Join Rows (cartesian product) 2</name>
     <type>JoinRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <cache_size>500</cache_size>
-      <main/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <cache_size>500</cache_size>
+    <main />
     <compare>
-<condition>
- <negated>N</negated>
- <leftvalue/>
- <function>&#x3d;</function>
- <rightvalue/>
- </condition>
+      <condition>
+        <negated>N</negated>
+        <leftvalue />
+        <function>=</function>
+        <rightvalue />
+      </condition>
     </compare>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1016,20 +1121,19 @@
       <yloc>200</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Join streams 2</name>
     <type>Dummy</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1041,25 +1145,46 @@
       <yloc>521</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <fields>      <field>        <name>input_file</name>
-      </field>      <field>        <name>input_file_extension</name>
-      </field>      <field>        <name>output_file</name>
-      </field>      <field>        <name>xslt_name</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>input_file</name>
+        <rename />
+      </field>
+      <field>
+        <name>input_file_extension</name>
+        <rename />
+      </field>
+      <field>
+        <name>output_file</name>
+        <rename />
+      </field>
+      <field>
+        <name>xslt_name</name>
+        <rename />
+      </field>
+      <field>
+        <name>max_width</name>
+        <rename />
+      </field>
+      <field>
+        <name>max_height</name>
+        <rename />
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1067,25 +1192,24 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>713</xloc>
+      <xloc>720</xloc>
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Table output</name>
     <type>TableOutput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <connection/>
-    <schema/>
+    <connection />
+    <schema />
     <table>wcf1009</table>
     <commit>1</commit>
     <truncate>N</truncate>
@@ -1093,449 +1217,449 @@
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
+    <partitioning_field />
     <partitioning_daily>N</partitioning_daily>
     <partitioning_monthly>Y</partitioning_monthly>
     <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
+    <tablename_field />
     <tablename_in_table>Y</tablename_in_table>
     <return_keys>N</return_keys>
-    <return_field/>
+    <return_field />
     <fields>
-        <field>
-          <column_name>ID</column_name>
-          <stream_name>ID</stream_name>
-        </field>
-        <field>
-          <column_name>RegistrationNumber</column_name>
-          <stream_name>RegistrationNumber</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_CompanyName</column_name>
-          <stream_name>ORI_CompanyName</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Branch</column_name>
-          <stream_name>ORI_Branch</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_CommerceNumber</column_name>
-          <stream_name>ORI_CommerceNumber</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_NumberOfEmployees</column_name>
-          <stream_name>ORI_NumberOfEmployees</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Position</column_name>
-          <stream_name>ORI_Position</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Gender</column_name>
-          <stream_name>ORI_Gender</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Title</column_name>
-          <stream_name>ORI_Title</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Firstname</column_name>
-          <stream_name>ORI_Firstname</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Initials</column_name>
-          <stream_name>ORI_Initials</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_SurnamePrefix</column_name>
-          <stream_name>ORI_SurnamePrefix</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Surname</column_name>
-          <stream_name>ORI_Surname</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_SurnameSuffix</column_name>
-          <stream_name>ORI_SurnameSuffix</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_DateOfBirth</column_name>
-          <stream_name>ORI_DateOfBirth</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Street</column_name>
-          <stream_name>ORI_Street</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_HouseNumber</column_name>
-          <stream_name>ORI_HouseNumber</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_HouseNumberSuffix</column_name>
-          <stream_name>ORI_HouseNumberSuffix</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_PostalCode</column_name>
-          <stream_name>ORI_PostalCode</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_City</column_name>
-          <stream_name>ORI_City</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Region</column_name>
-          <stream_name>ORI_Region</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Country</column_name>
-          <stream_name>ORI_Country</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Phone1</column_name>
-          <stream_name>ORI_Phone1</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Phone2</column_name>
-          <stream_name>ORI_Phone2</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_PhoneMobile</column_name>
-          <stream_name>ORI_PhoneMobile</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Fax</column_name>
-          <stream_name>ORI_Fax</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Email</column_name>
-          <stream_name>ORI_Email</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Website</column_name>
-          <stream_name>ORI_Website</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Newsletter</column_name>
-          <stream_name>ORI_Newsletter</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Member</column_name>
-          <stream_name>ORI_Member</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Bank</column_name>
-          <stream_name>ORI_Bank</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Giro</column_name>
-          <stream_name>ORI_Giro</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Amount</column_name>
-          <stream_name>ORI_Amount</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_Frequency</column_name>
-          <stream_name>ORI_Frequency</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_FreeField1</column_name>
-          <stream_name>ORI_FreeField1</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_FreeField2</column_name>
-          <stream_name>ORI_FreeField2</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_FreeField3</column_name>
-          <stream_name>ORI_FreeField3</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_FreeField4</column_name>
-          <stream_name>ORI_FreeField4</stream_name>
-        </field>
-        <field>
-          <column_name>ORI_FreeField5</column_name>
-          <stream_name>ORI_FreeField5</stream_name>
-        </field>
-        <field>
-          <column_name>CompanyName</column_name>
-          <stream_name>CompanyName</stream_name>
-        </field>
-        <field>
-          <column_name>Branch</column_name>
-          <stream_name>Branch</stream_name>
-        </field>
-        <field>
-          <column_name>CommerceNumber</column_name>
-          <stream_name>CommerceNumber</stream_name>
-        </field>
-        <field>
-          <column_name>NumberOfEmployees</column_name>
-          <stream_name>NumberOfEmployees</stream_name>
-        </field>
-        <field>
-          <column_name>Position</column_name>
-          <stream_name>Position</stream_name>
-        </field>
-        <field>
-          <column_name>Gender</column_name>
-          <stream_name>Gender</stream_name>
-        </field>
-        <field>
-          <column_name>Title</column_name>
-          <stream_name>Title</stream_name>
-        </field>
-        <field>
-          <column_name>Firstname</column_name>
-          <stream_name>Firstname</stream_name>
-        </field>
-        <field>
-          <column_name>Initials</column_name>
-          <stream_name>Initials</stream_name>
-        </field>
-        <field>
-          <column_name>SurnamePrefix</column_name>
-          <stream_name>SurnamePrefix</stream_name>
-        </field>
-        <field>
-          <column_name>Surname</column_name>
-          <stream_name>Surname</stream_name>
-        </field>
-        <field>
-          <column_name>SurnameSuffix</column_name>
-          <stream_name>SurnameSuffix</stream_name>
-        </field>
-        <field>
-          <column_name>DateOfBirth</column_name>
-          <stream_name>DateOfBirth</stream_name>
-        </field>
-        <field>
-          <column_name>Street</column_name>
-          <stream_name>Street</stream_name>
-        </field>
-        <field>
-          <column_name>HouseNumber</column_name>
-          <stream_name>HouseNumber</stream_name>
-        </field>
-        <field>
-          <column_name>HouseNumberSuffix</column_name>
-          <stream_name>HouseNumberSuffix</stream_name>
-        </field>
-        <field>
-          <column_name>PostalCode</column_name>
-          <stream_name>PostalCode</stream_name>
-        </field>
-        <field>
-          <column_name>City</column_name>
-          <stream_name>City</stream_name>
-        </field>
-        <field>
-          <column_name>Region</column_name>
-          <stream_name>Region</stream_name>
-        </field>
-        <field>
-          <column_name>Country</column_name>
-          <stream_name>Country</stream_name>
-        </field>
-        <field>
-          <column_name>Phone1</column_name>
-          <stream_name>Phone1</stream_name>
-        </field>
-        <field>
-          <column_name>Phone2</column_name>
-          <stream_name>Phone2</stream_name>
-        </field>
-        <field>
-          <column_name>PhoneMobile</column_name>
-          <stream_name>PhoneMobile</stream_name>
-        </field>
-        <field>
-          <column_name>Fax</column_name>
-          <stream_name>Fax</stream_name>
-        </field>
-        <field>
-          <column_name>Email</column_name>
-          <stream_name>Email</stream_name>
-        </field>
-        <field>
-          <column_name>Website</column_name>
-          <stream_name>Website</stream_name>
-        </field>
-        <field>
-          <column_name>Newsletter</column_name>
-          <stream_name>Newsletter</stream_name>
-        </field>
-        <field>
-          <column_name>Member</column_name>
-          <stream_name>Member</stream_name>
-        </field>
-        <field>
-          <column_name>BankNumber</column_name>
-          <stream_name>BankNumber</stream_name>
-        </field>
-        <field>
-          <column_name>BankType</column_name>
-          <stream_name>BankType</stream_name>
-        </field>
-        <field>
-          <column_name>Comments</column_name>
-          <stream_name>Comments</stream_name>
-        </field>
-        <field>
-          <column_name>FreeField1</column_name>
-          <stream_name>FreeField1</stream_name>
-        </field>
-        <field>
-          <column_name>FreeField2</column_name>
-          <stream_name>FreeField2</stream_name>
-        </field>
-        <field>
-          <column_name>FreeField3</column_name>
-          <stream_name>FreeField3</stream_name>
-        </field>
-        <field>
-          <column_name>FreeField4</column_name>
-          <stream_name>FreeField4</stream_name>
-        </field>
-        <field>
-          <column_name>FreeField5</column_name>
-          <stream_name>FreeField5</stream_name>
-        </field>
-        <field>
-          <column_name>Enrichment</column_name>
-          <stream_name>Enrichment</stream_name>
-        </field>
-        <field>
-          <column_name>AskLevel1</column_name>
-          <stream_name>AskLevel1</stream_name>
-        </field>
-        <field>
-          <column_name>AskLevel2</column_name>
-          <stream_name>AskLevel2</stream_name>
-        </field>
-        <field>
-          <column_name>AskLevel3</column_name>
-          <stream_name>AskLevel3</stream_name>
-        </field>
-        <field>
-          <column_name>AskLevel4</column_name>
-          <stream_name>AskLevel4</stream_name>
-        </field>
-        <field>
-          <column_name>Amount</column_name>
-          <stream_name>Amount</stream_name>
-        </field>
-        <field>
-          <column_name>Frequency</column_name>
-          <stream_name>Frequency</stream_name>
-        </field>
-        <field>
-          <column_name>CollectDate</column_name>
-          <stream_name>CollectDate</stream_name>
-        </field>
-        <field>
-          <column_name>Requestinformation</column_name>
-          <stream_name>Requestinformation</stream_name>
-        </field>
-        <field>
-          <column_name>PostalChanges</column_name>
-          <stream_name>PostalChanges</stream_name>
-        </field>
-        <field>
-          <column_name>Project_Code</column_name>
-          <stream_name>Project_Code</stream_name>
-        </field>
-        <field>
-          <column_name>Segment</column_name>
-          <stream_name>Segment</stream_name>
-        </field>
-        <field>
-          <column_name>MailKey</column_name>
-          <stream_name>MailKey</stream_name>
-        </field>
-        <field>
-          <column_name>Agenda</column_name>
-          <stream_name>Agenda</stream_name>
-        </field>
-        <field>
-          <column_name>ImportNumber</column_name>
-          <stream_name>ImportNumber</stream_name>
-        </field>
-        <field>
-          <column_name>ImportName</column_name>
-          <stream_name>ImportName</stream_name>
-        </field>
-        <field>
-          <column_name>ImportDate</column_name>
-          <stream_name>ImportDate</stream_name>
-        </field>
-        <field>
-          <column_name>ImportSource</column_name>
-          <stream_name>ImportSource</stream_name>
-        </field>
-        <field>
-          <column_name>ExportDate1</column_name>
-          <stream_name>ExportDate1</stream_name>
-        </field>
-        <field>
-          <column_name>ExportDate2</column_name>
-          <stream_name>ExportDate2</stream_name>
-        </field>
-        <field>
-          <column_name>ExportDate3</column_name>
-          <stream_name>ExportDate3</stream_name>
-        </field>
-        <field>
-          <column_name>VoiceLog</column_name>
-          <stream_name>VoiceLog</stream_name>
-        </field>
-        <field>
-          <column_name>DayPart</column_name>
-          <stream_name>DayPart</stream_name>
-        </field>
-        <field>
-          <column_name>RecordStatus</column_name>
-          <stream_name>RecordStatus</stream_name>
-        </field>
-        <field>
-          <column_name>CLCStatus</column_name>
-          <stream_name>CLCStatus</stream_name>
-        </field>
-        <field>
-          <column_name>TK_CD</column_name>
-          <stream_name>TK_CD</stream_name>
-        </field>
-        <field>
-          <column_name>TK_CT</column_name>
-          <stream_name>TK_CT</stream_name>
-        </field>
-        <field>
-          <column_name>TK_CA</column_name>
-          <stream_name>TK_CA</stream_name>
-        </field>
-        <field>
-          <column_name>TK_RC</column_name>
-          <stream_name>TK_RC</stream_name>
-        </field>
-        <field>
-          <column_name>TK_AD</column_name>
-          <stream_name>TK_AD</stream_name>
-        </field>
-        <field>
-          <column_name>TK_AT</column_name>
-          <stream_name>TK_AT</stream_name>
-        </field>
-        <field>
-          <column_name>TK_MW</column_name>
-          <stream_name>TK_MW</stream_name>
-        </field>
-        <field>
-          <column_name>TK_MM</column_name>
-          <stream_name>TK_MM</stream_name>
-        </field>
+      <field>
+        <column_name>ID</column_name>
+        <stream_name>ID</stream_name>
+      </field>
+      <field>
+        <column_name>RegistrationNumber</column_name>
+        <stream_name>RegistrationNumber</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_CompanyName</column_name>
+        <stream_name>ORI_CompanyName</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Branch</column_name>
+        <stream_name>ORI_Branch</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_CommerceNumber</column_name>
+        <stream_name>ORI_CommerceNumber</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_NumberOfEmployees</column_name>
+        <stream_name>ORI_NumberOfEmployees</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Position</column_name>
+        <stream_name>ORI_Position</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Gender</column_name>
+        <stream_name>ORI_Gender</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Title</column_name>
+        <stream_name>ORI_Title</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Firstname</column_name>
+        <stream_name>ORI_Firstname</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Initials</column_name>
+        <stream_name>ORI_Initials</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_SurnamePrefix</column_name>
+        <stream_name>ORI_SurnamePrefix</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Surname</column_name>
+        <stream_name>ORI_Surname</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_SurnameSuffix</column_name>
+        <stream_name>ORI_SurnameSuffix</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_DateOfBirth</column_name>
+        <stream_name>ORI_DateOfBirth</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Street</column_name>
+        <stream_name>ORI_Street</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_HouseNumber</column_name>
+        <stream_name>ORI_HouseNumber</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_HouseNumberSuffix</column_name>
+        <stream_name>ORI_HouseNumberSuffix</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_PostalCode</column_name>
+        <stream_name>ORI_PostalCode</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_City</column_name>
+        <stream_name>ORI_City</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Region</column_name>
+        <stream_name>ORI_Region</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Country</column_name>
+        <stream_name>ORI_Country</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Phone1</column_name>
+        <stream_name>ORI_Phone1</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Phone2</column_name>
+        <stream_name>ORI_Phone2</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_PhoneMobile</column_name>
+        <stream_name>ORI_PhoneMobile</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Fax</column_name>
+        <stream_name>ORI_Fax</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Email</column_name>
+        <stream_name>ORI_Email</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Website</column_name>
+        <stream_name>ORI_Website</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Newsletter</column_name>
+        <stream_name>ORI_Newsletter</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Member</column_name>
+        <stream_name>ORI_Member</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Bank</column_name>
+        <stream_name>ORI_Bank</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Giro</column_name>
+        <stream_name>ORI_Giro</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Amount</column_name>
+        <stream_name>ORI_Amount</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_Frequency</column_name>
+        <stream_name>ORI_Frequency</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_FreeField1</column_name>
+        <stream_name>ORI_FreeField1</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_FreeField2</column_name>
+        <stream_name>ORI_FreeField2</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_FreeField3</column_name>
+        <stream_name>ORI_FreeField3</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_FreeField4</column_name>
+        <stream_name>ORI_FreeField4</stream_name>
+      </field>
+      <field>
+        <column_name>ORI_FreeField5</column_name>
+        <stream_name>ORI_FreeField5</stream_name>
+      </field>
+      <field>
+        <column_name>CompanyName</column_name>
+        <stream_name>CompanyName</stream_name>
+      </field>
+      <field>
+        <column_name>Branch</column_name>
+        <stream_name>Branch</stream_name>
+      </field>
+      <field>
+        <column_name>CommerceNumber</column_name>
+        <stream_name>CommerceNumber</stream_name>
+      </field>
+      <field>
+        <column_name>NumberOfEmployees</column_name>
+        <stream_name>NumberOfEmployees</stream_name>
+      </field>
+      <field>
+        <column_name>Position</column_name>
+        <stream_name>Position</stream_name>
+      </field>
+      <field>
+        <column_name>Gender</column_name>
+        <stream_name>Gender</stream_name>
+      </field>
+      <field>
+        <column_name>Title</column_name>
+        <stream_name>Title</stream_name>
+      </field>
+      <field>
+        <column_name>Firstname</column_name>
+        <stream_name>Firstname</stream_name>
+      </field>
+      <field>
+        <column_name>Initials</column_name>
+        <stream_name>Initials</stream_name>
+      </field>
+      <field>
+        <column_name>SurnamePrefix</column_name>
+        <stream_name>SurnamePrefix</stream_name>
+      </field>
+      <field>
+        <column_name>Surname</column_name>
+        <stream_name>Surname</stream_name>
+      </field>
+      <field>
+        <column_name>SurnameSuffix</column_name>
+        <stream_name>SurnameSuffix</stream_name>
+      </field>
+      <field>
+        <column_name>DateOfBirth</column_name>
+        <stream_name>DateOfBirth</stream_name>
+      </field>
+      <field>
+        <column_name>Street</column_name>
+        <stream_name>Street</stream_name>
+      </field>
+      <field>
+        <column_name>HouseNumber</column_name>
+        <stream_name>HouseNumber</stream_name>
+      </field>
+      <field>
+        <column_name>HouseNumberSuffix</column_name>
+        <stream_name>HouseNumberSuffix</stream_name>
+      </field>
+      <field>
+        <column_name>PostalCode</column_name>
+        <stream_name>PostalCode</stream_name>
+      </field>
+      <field>
+        <column_name>City</column_name>
+        <stream_name>City</stream_name>
+      </field>
+      <field>
+        <column_name>Region</column_name>
+        <stream_name>Region</stream_name>
+      </field>
+      <field>
+        <column_name>Country</column_name>
+        <stream_name>Country</stream_name>
+      </field>
+      <field>
+        <column_name>Phone1</column_name>
+        <stream_name>Phone1</stream_name>
+      </field>
+      <field>
+        <column_name>Phone2</column_name>
+        <stream_name>Phone2</stream_name>
+      </field>
+      <field>
+        <column_name>PhoneMobile</column_name>
+        <stream_name>PhoneMobile</stream_name>
+      </field>
+      <field>
+        <column_name>Fax</column_name>
+        <stream_name>Fax</stream_name>
+      </field>
+      <field>
+        <column_name>Email</column_name>
+        <stream_name>Email</stream_name>
+      </field>
+      <field>
+        <column_name>Website</column_name>
+        <stream_name>Website</stream_name>
+      </field>
+      <field>
+        <column_name>Newsletter</column_name>
+        <stream_name>Newsletter</stream_name>
+      </field>
+      <field>
+        <column_name>Member</column_name>
+        <stream_name>Member</stream_name>
+      </field>
+      <field>
+        <column_name>BankNumber</column_name>
+        <stream_name>BankNumber</stream_name>
+      </field>
+      <field>
+        <column_name>BankType</column_name>
+        <stream_name>BankType</stream_name>
+      </field>
+      <field>
+        <column_name>Comments</column_name>
+        <stream_name>Comments</stream_name>
+      </field>
+      <field>
+        <column_name>FreeField1</column_name>
+        <stream_name>FreeField1</stream_name>
+      </field>
+      <field>
+        <column_name>FreeField2</column_name>
+        <stream_name>FreeField2</stream_name>
+      </field>
+      <field>
+        <column_name>FreeField3</column_name>
+        <stream_name>FreeField3</stream_name>
+      </field>
+      <field>
+        <column_name>FreeField4</column_name>
+        <stream_name>FreeField4</stream_name>
+      </field>
+      <field>
+        <column_name>FreeField5</column_name>
+        <stream_name>FreeField5</stream_name>
+      </field>
+      <field>
+        <column_name>Enrichment</column_name>
+        <stream_name>Enrichment</stream_name>
+      </field>
+      <field>
+        <column_name>AskLevel1</column_name>
+        <stream_name>AskLevel1</stream_name>
+      </field>
+      <field>
+        <column_name>AskLevel2</column_name>
+        <stream_name>AskLevel2</stream_name>
+      </field>
+      <field>
+        <column_name>AskLevel3</column_name>
+        <stream_name>AskLevel3</stream_name>
+      </field>
+      <field>
+        <column_name>AskLevel4</column_name>
+        <stream_name>AskLevel4</stream_name>
+      </field>
+      <field>
+        <column_name>Amount</column_name>
+        <stream_name>Amount</stream_name>
+      </field>
+      <field>
+        <column_name>Frequency</column_name>
+        <stream_name>Frequency</stream_name>
+      </field>
+      <field>
+        <column_name>CollectDate</column_name>
+        <stream_name>CollectDate</stream_name>
+      </field>
+      <field>
+        <column_name>Requestinformation</column_name>
+        <stream_name>Requestinformation</stream_name>
+      </field>
+      <field>
+        <column_name>PostalChanges</column_name>
+        <stream_name>PostalChanges</stream_name>
+      </field>
+      <field>
+        <column_name>Project_Code</column_name>
+        <stream_name>Project_Code</stream_name>
+      </field>
+      <field>
+        <column_name>Segment</column_name>
+        <stream_name>Segment</stream_name>
+      </field>
+      <field>
+        <column_name>MailKey</column_name>
+        <stream_name>MailKey</stream_name>
+      </field>
+      <field>
+        <column_name>Agenda</column_name>
+        <stream_name>Agenda</stream_name>
+      </field>
+      <field>
+        <column_name>ImportNumber</column_name>
+        <stream_name>ImportNumber</stream_name>
+      </field>
+      <field>
+        <column_name>ImportName</column_name>
+        <stream_name>ImportName</stream_name>
+      </field>
+      <field>
+        <column_name>ImportDate</column_name>
+        <stream_name>ImportDate</stream_name>
+      </field>
+      <field>
+        <column_name>ImportSource</column_name>
+        <stream_name>ImportSource</stream_name>
+      </field>
+      <field>
+        <column_name>ExportDate1</column_name>
+        <stream_name>ExportDate1</stream_name>
+      </field>
+      <field>
+        <column_name>ExportDate2</column_name>
+        <stream_name>ExportDate2</stream_name>
+      </field>
+      <field>
+        <column_name>ExportDate3</column_name>
+        <stream_name>ExportDate3</stream_name>
+      </field>
+      <field>
+        <column_name>VoiceLog</column_name>
+        <stream_name>VoiceLog</stream_name>
+      </field>
+      <field>
+        <column_name>DayPart</column_name>
+        <stream_name>DayPart</stream_name>
+      </field>
+      <field>
+        <column_name>RecordStatus</column_name>
+        <stream_name>RecordStatus</stream_name>
+      </field>
+      <field>
+        <column_name>CLCStatus</column_name>
+        <stream_name>CLCStatus</stream_name>
+      </field>
+      <field>
+        <column_name>TK_CD</column_name>
+        <stream_name>TK_CD</stream_name>
+      </field>
+      <field>
+        <column_name>TK_CT</column_name>
+        <stream_name>TK_CT</stream_name>
+      </field>
+      <field>
+        <column_name>TK_CA</column_name>
+        <stream_name>TK_CA</stream_name>
+      </field>
+      <field>
+        <column_name>TK_RC</column_name>
+        <stream_name>TK_RC</stream_name>
+      </field>
+      <field>
+        <column_name>TK_AD</column_name>
+        <stream_name>TK_AD</stream_name>
+      </field>
+      <field>
+        <column_name>TK_AT</column_name>
+        <stream_name>TK_AT</stream_name>
+      </field>
+      <field>
+        <column_name>TK_MW</column_name>
+        <stream_name>TK_MW</stream_name>
+      </field>
+      <field>
+        <column_name>TK_MM</column_name>
+        <stream_name>TK_MM</stream_name>
+      </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1547,48 +1671,51 @@
       <yloc>110</yloc>
       <draw>N</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>command lines &#x2f; scripts</name>
+    <name>command lines / scripts</name>
     <type>Formula</type>
-    <description/>
+    <description />
     <distribute>N</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-       <formula><field_name>java-command</field_name>
-<formula_string>&#x5b;java_home&#x5d; &#x26; &#x5b;file_separator&#x5d; &#x26; &#x22;bin&#x22; &#x26; &#x5b;file_separator&#x5d; &#x26; &#x22;java&#x22;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-       <formula><field_name>xslt-dir2</field_name>
-<formula_string>&#x5b;transformation_dir&#x5d; &#x26; &#x22;&#x2f;&#x22; &#x26; &#x22;..&#x22;  &#x26; &#x22;&#x2f;&#x22; &#x26; &#x22;xslt&#x22; &#x26; &#x22;&#x2f;&#x22;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-       <formula><field_name>full_transform_script</field_name>
-<formula_string>&#x5b;output_dir&#x5d; &#x26; &#x5b;file_separator&#x5d; &#x26; &#x22;transform.&#x22; &#x26; &#x5b;transform-script-extension&#x5d;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-       <formula><field_name>xslt-dir</field_name>
-<formula_string>&#x5b;transformation_dir&#x5d;  &#x26; &#x22;&#x2f;&#x22; &#x26; &#x22;xslt&#x22; &#x26; &#x22;&#x2f;&#x22;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-    <cluster_schema/>
+    <formula>
+      <field_name>java-command</field_name>
+      <formula_string>[java_home] &amp; [file_separator] &amp; "bin" &amp; [file_separator] &amp; "java"</formula_string>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field />
+    </formula>
+    <formula>
+      <field_name>xslt-dir2</field_name>
+      <formula_string>[transformation_dir] &amp; "/" &amp; ".."  &amp; "/" &amp; "xslt" &amp; "/"</formula_string>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field />
+    </formula>
+    <formula>
+      <field_name>full_transform_script</field_name>
+      <formula_string>[output_dir] &amp; [file_separator] &amp; "transform." &amp; [transform-script-extension]</formula_string>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field />
+    </formula>
+    <formula>
+      <field_name>xslt-dir</field_name>
+      <formula_string>[transformation_dir]  &amp; "/" &amp; "xslt" &amp; "/"</formula_string>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field />
+    </formula>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1600,34 +1727,33 @@
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>file_separator</name>
     <type>GetVariable</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>file_separator</name>
-        <variable>&#x24;&#x7b;file.separator&#x7d;</variable>
+        <variable>${file.separator}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1639,23 +1765,26 @@
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>filename -&#x3e; saxon.jar</name>
+    <name>filename -> saxon.jar</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <fields>      <field>        <name>filename</name>
+    <fields>
+      <field>
+        <name>filename</name>
         <rename>saxon.jar</rename>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1667,18 +1796,17 @@
       <yloc>269</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>files</name>
     <type>MappingInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
@@ -1699,9 +1827,9 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
-        <select_unspecified>N</select_unspecified>
+      <select_unspecified>N</select_unspecified>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1709,37 +1837,37 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>129</xloc>
-      <yloc>521</yloc>
+      <xloc>96</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>fix path</name>
     <type>ReplaceString</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <in_stream_name>param</in_stream_name>
-        <out_stream_name/>
+        <out_stream_name />
         <use_regex>no</use_regex>
-        <replace_string>&#x5c;</replace_string>
-        <replace_by_string>&#x2f;</replace_by_string>
+        <replace_string>\</replace_string>
+        <replace_by_string>/</replace_by_string>
         <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
+        <replace_field_by_string />
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1751,34 +1879,33 @@
       <yloc>520</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>frontpage</name>
     <type>Constant</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>name</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <nullif>frontpage</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1790,70 +1917,69 @@
       <yloc>454</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>get runtime info</name>
     <type>GetVariable</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>java_home</name>
-        <variable>&#x24;&#x7b;java.home&#x7d;</variable>
+        <variable>${java.home}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>operating_system</name>
-        <variable>&#x24;&#x7b;os.name&#x7d;</variable>
+        <variable>${os.name}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>file_separator</name>
-        <variable>&#x24;&#x7b;file.separator&#x7d;</variable>
+        <variable>${file.separator}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>transformation_dir</name>
-        <variable>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;</variable>
+        <variable>${Internal.Job.Filename.Directory}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1865,80 +1991,79 @@
       <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>html dir</name>
     <type>Calculator</type>
-    <description/>
+    <description />
     <distribute>N</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <calculation>
       <field_name>input_file</field_name>
       <calc_type>CONSTANT</calc_type>
       <field_a> </field_a>
-      <field_b/>
-      <field_c/>
+      <field_b />
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>input_file_extension</field_name>
       <calc_type>CONSTANT</calc_type>
       <field_a> </field_a>
-      <field_b/>
-      <field_c/>
+      <field_b />
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>.xslt</field_name>
       <calc_type>CONSTANT</calc_type>
       <field_a>.xslt</field_a>
-      <field_b/>
-      <field_c/>
+      <field_b />
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>.html</field_name>
       <calc_type>CONSTANT</calc_type>
       <field_a>.html</field_a>
-      <field_b/>
-      <field_c/>
+      <field_b />
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1950,18 +2075,17 @@
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>index.xml</name>
     <type>MappingInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
@@ -1970,9 +2094,9 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
-        <select_unspecified>N</select_unspecified>
+      <select_unspecified>N</select_unspecified>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1984,18 +2108,17 @@
       <yloc>138</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>input_dir &#x2f; output_dir</name>
+    <name>input_dir / output_dir</name>
     <type>MappingInput</type>
-    <description/>
+    <description />
     <distribute>N</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
@@ -2016,9 +2139,9 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
-        <select_unspecified>N</select_unspecified>
+      <select_unspecified>N</select_unspecified>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2026,34 +2149,42 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>125</xloc>
-      <yloc>200</yloc>
+      <xloc>112</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>is windows&#x3f;</name>
+    <name>is windows?</name>
     <type>FilterRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-<send_true_to>.bat</send_true_to>
-<send_false_to>.sh</send_false_to>
+    <send_true_to>.bat</send_true_to>
+    <send_false_to>.sh</send_false_to>
     <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>is_windows</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>is_windows</leftvalue>
+        <function>=</function>
+        <rightvalue />
+        <value>
+          <name>constant</name>
+          <type>Boolean</type>
+          <text>Y</text>
+          <length>-1</length>
+          <precision>-1</precision>
+          <isnull>N</isnull>
+          <mask />
+        </value>
+      </condition>
     </compare>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2065,20 +2196,19 @@
       <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>join streams</name>
     <type>Dummy</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2090,20 +2220,20 @@
       <yloc>83</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>match windows</name>
     <type>RegexEval</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <script><![CDATA[^Windows.*$]]></script>    <matcher>operating_system</matcher>
+    <script>^Windows.*$</script>
+    <matcher>operating_system</matcher>
     <resultfieldname>is_windows</resultfieldname>
     <usevar>N</usevar>
     <allowcapturegroups>N</allowcapturegroups>
@@ -2117,7 +2247,7 @@
     <unix>N</unix>
     <fields>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2129,63 +2259,62 @@
       <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>saxon lines </name>
     <type>Calculator</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <calculation>
       <field_name>name</field_name>
       <calc_type>CONSTANT</calc_type>
       <field_a>toc</field_a>
-      <field_b/>
-      <field_c/>
+      <field_b />
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>xslt_name</field_name>
       <calc_type>ADD</calc_type>
       <field_a>name</field_a>
       <field_b>.xslt</field_b>
-      <field_c/>
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>name.html</field_name>
       <calc_type>ADD</calc_type>
       <field_a>name</field_a>
       <field_b>.html</field_b>
-      <field_c/>
+      <field_c />
       <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
     <calculation>
       <field_name>output_file</field_name>
@@ -2197,12 +2326,42 @@
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
       <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
     </calculation>
-    <cluster_schema/>
+    <calculation>
+      <field_name>max_width</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>0</field_a>
+      <field_b />
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>max_height</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>0</field_a>
+      <field_b />
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2214,34 +2373,33 @@
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>toc</name>
     <type>Constant</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>name</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <nullif>toc</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2253,45 +2411,43 @@
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>transform script</name>
     <type>TextFileOutput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <separator> </separator>
-    <enclosure/>
+    <enclosure />
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>Y</enclosure_fix_disabled>
     <header>N</header>
     <footer>N</footer>
-    <format>DOS</format>
+    <format>UNIX</format>
     <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine/>
+    <endedLine />
     <fileNameInField>Y</fileNameInField>
     <fileNameField>full_transform_script</fileNameField>
     <create_parent_folder>N</create_parent_folder>
     <file>
       <name>file</name>
-      <is_command>N</is_command>
       <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention/>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <extention />
       <append>N</append>
       <split>N</split>
       <haspartno>N</haspartno>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
+      <date_time_format />
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
@@ -2301,11 +2457,11 @@
       <field>
         <name>quoted_java_command</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2313,11 +2469,11 @@
       <field>
         <name>java-options</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2325,11 +2481,11 @@
       <field>
         <name>quoted_saxon.jar</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2337,11 +2493,11 @@
       <field>
         <name>saxon-options</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2349,11 +2505,11 @@
       <field>
         <name>quoted_output_file</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2361,11 +2517,11 @@
       <field>
         <name>quoted_index</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2373,11 +2529,11 @@
       <field>
         <name>quoted_xsl</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2385,17 +2541,41 @@
       <field>
         <name>param</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>param_width</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>param_height</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2407,9 +2587,646 @@
       <yloc>520</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
+  </step>
+  <step>
+    <name>Calculate total size of notepads</name>
+    <type>Calculator</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <calculation>
+      <field_name>max_width</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>xloc</field_a>
+      <field_b>width</field_b>
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>max_height</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>yloc</field_a>
+      <field_b>height</field_b>
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>input_extension</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a> </field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Parse notepads info for trans</name>
+    <type>getXMLData</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <include>N</include>
+    <include_field>filename</include_field>
+    <rownum>N</rownum>
+    <addresultfile>N</addresultfile>
+    <namespaceaware>N</namespaceaware>
+    <ignorecomments>N</ignorecomments>
+    <readurl>N</readurl>
+    <validating>N</validating>
+    <usetoken>N</usetoken>
+    <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
+    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <rownum_field />
+    <encoding>UTF-8</encoding>
+    <file>
+      <name />
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>xloc</name>
+        <xpath>xloc</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>yloc</name>
+        <xpath>yloc</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>width</name>
+        <xpath>width</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>height</name>
+        <xpath>heigth</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <loopxpath>/transformation/notepads/notepad | /transformation/notepads</loopxpath>
+    <IsInFields>Y</IsInFields>
+    <IsAFile>Y</IsAFile>
+    <XmlField>input_file</XmlField>
+    <prunePath />
+    <shortFileFieldName />
+    <pathFieldName />
+    <hiddenFieldName />
+    <lastModificationTimeFieldName />
+    <uriNameFieldName />
+    <rootUriNameFieldName />
+    <extensionFieldName />
+    <sizeFieldName />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Get highest (x,y) values</name>
+    <type>GroupBy</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore />
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname />
+    <give_back_row>Y</give_back_row>
+    <group>
+      <field>
+        <name>input_file</name>
+      </field>
+    </group>
+    <fields>
+      <field>
+        <aggregate>output_file</aggregate>
+        <subject>output_file</subject>
+        <type>FIRST</type>
+        <valuefield />
+      </field>
+      <field>
+        <aggregate>xslt_name</aggregate>
+        <subject>xslt_name</subject>
+        <type>FIRST</type>
+        <valuefield />
+      </field>
+      <field>
+        <aggregate>max_width</aggregate>
+        <subject>max_width</subject>
+        <type>MAX</type>
+        <valuefield />
+      </field>
+      <field>
+        <aggregate>max_height</aggregate>
+        <subject>max_height</subject>
+        <type>MAX</type>
+        <valuefield />
+      </field>
+      <field>
+        <aggregate>input_extension</aggregate>
+        <subject>input_extension</subject>
+        <type>FIRST</type>
+        <valuefield />
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Keep only the relevant fields</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>input_file</name>
+        <rename />
+      </field>
+      <field>
+        <name>input_extension</name>
+        <rename />
+      </field>
+      <field>
+        <name>output_file</name>
+        <rename />
+      </field>
+      <field>
+        <name>xslt_name</name>
+        <rename />
+      </field>
+      <field>
+        <name>max_width</name>
+        <rename />
+      </field>
+      <field>
+        <name>max_height</name>
+        <rename />
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>528</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Check if job or trans</name>
+    <type>RegexEval</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <script>.+(\.k[jt][br])</script>
+    <matcher>input_file</matcher>
+    <resultfieldname>result</resultfieldname>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>N</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>extension</name>
+        <type>String</type>
+        <format />
+        <group />
+        <decimal />
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif />
+        <ifnull />
+        <trimtype>both</trimtype>
+        <currency />
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Parse the file according to its type</name>
+    <type>SwitchCase</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fieldname>extension</fieldname>
+    <use_contains>N</use_contains>
+    <case_value_type>String</case_value_type>
+    <case_value_format />
+    <case_value_decimal />
+    <case_value_group />
+    <default_target_step />
+    <cases>
+      <case>
+        <value>.kjb</value>
+        <target_step>Parse notepads info for jobs</target_step>
+      </case>
+      <case>
+        <value>.ktr</value>
+        <target_step>Parse notepads info for trans</target_step>
+      </case>
+    </cases>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>544</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Parse notepads info for jobs</name>
+    <type>getXMLData</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <include>N</include>
+    <include_field>filename</include_field>
+    <rownum>N</rownum>
+    <addresultfile>N</addresultfile>
+    <namespaceaware>N</namespaceaware>
+    <ignorecomments>N</ignorecomments>
+    <readurl>N</readurl>
+    <validating>N</validating>
+    <usetoken>N</usetoken>
+    <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
+    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <rownum_field />
+    <encoding>UTF-8</encoding>
+    <file>
+      <name />
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>xloc</name>
+        <xpath>xloc</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>yloc</name>
+        <xpath>yloc</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>width</name>
+        <xpath>width</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>height</name>
+        <xpath>heigth</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <loopxpath>/job/notepads/notepad | /job/notepads</loopxpath>
+    <IsInFields>Y</IsInFields>
+    <IsAFile>Y</IsAFile>
+    <XmlField>input_file</XmlField>
+    <prunePath />
+    <shortFileFieldName />
+    <pathFieldName />
+    <hiddenFieldName />
+    <lastModificationTimeFieldName />
+    <uriNameFieldName />
+    <rootUriNameFieldName />
+    <extensionFieldName />
+    <sizeFieldName />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Avoid null results</name>
+    <type>ScriptValueMod</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
 
+var idx = getInputRowMeta().indexOfValue("width");
+var width = row[idx];
+if (idx &lt; 0 || width == "") {
+	var width = 0;
+}
+
+idx = getInputRowMeta().indexOfValue("height");
+var height = row[idx];
+if (idx &lt; 0 || height == "") {
+	var height = 0;
+}
+
+idx = getInputRowMeta().indexOfValue("xloc");
+var xloc = row[idx];
+if (idx &lt; 0 || xloc == "") {
+	var xloc = 0;
+}
+
+idx = getInputRowMeta().indexOfValue("yloc");
+var yloc = row[idx];
+if (idx &lt; 0 || yloc == "") {
+	var xloc = 0;
+}
+</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>width</name>
+        <rename>width</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>height</name>
+        <rename>height</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>xloc</name>
+        <rename>xloc</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>yloc</name>
+        <rename>yloc</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>528</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step_error_handling>
+    <error>
+      <source_step>Parse notepads info for trans</source_step>
+      <target_step>Calculate total size of notepads</target_step>
+      <is_enabled>N</is_enabled>
+      <nr_valuename />
+      <descriptions_valuename />
+      <fields_valuename />
+      <codes_valuename />
+      <max_errors />
+      <max_pct_errors />
+      <min_pct_rows />
+    </error>
+    <error>
+      <source_step>Parse notepads info for jobs</source_step>
+      <target_step>Calculator 2 2</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename />
+      <descriptions_valuename />
+      <fields_valuename />
+      <codes_valuename />
+      <max_errors />
+      <max_pct_errors />
+      <min_pct_rows />
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
