@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2010/10/06 01:02:24.031</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2018/09/03 11:57:37.051</modified_date>
+  <modified_date>2018/09/06 18:09:29.858</modified_date>
   <parameters>
     <parameter>
       <name>INPUT_DIR</name>
@@ -34,6 +34,11 @@
       <name>OUTPUT_DIR</name>
       <default_value>/Users/okr/serima/sbb/kettle_repo/doc</default_value>
       <description>Directory where you want the documentation to be placed</description>
+    </parameter>
+    <parameter>
+      <name>pdi_install_dir</name>
+      <default_value>/Users/okr/serima/dev/data-integration-8.1.0.0-365</default_value>
+      <description>Where PDI is installed, to fetch libjars (saxon)</description>
     </parameter>
   </parameters>
   <slaveservers>
@@ -328,8 +333,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>54</xloc>
-      <yloc>134</yloc>
+      <xloc>16</xloc>
+      <yloc>144</yloc>
     </entry>
     <entry>
       <name>Create ${OUTPUT_DIR} and Copy Template</name>
@@ -393,6 +398,11 @@ These static resources are referenced by &lt;script>, &lt;link> and &lt;img> tag
           <name>Internal.Job.Filename.Directory</name>
           <stream_name />
           <value>${Internal.Job.Filename.Directory}</value>
+        </parameter>
+        <parameter>
+          <name>pdi_install_dir</name>
+          <stream_name />
+          <value>${pdi_install_dir}</value>
         </parameter>
       </parameters>
       <parallel>N</parallel>
@@ -582,8 +592,26 @@ These static resources are referenced by &lt;script>, &lt;link> and &lt;img> tag
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>244</xloc>
-      <yloc>134</yloc>
+      <xloc>304</xloc>
+      <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>Clean OUTPUT_DIR</name>
+      <description />
+      <type>DELETE_FILES</type>
+      <arg_from_previous>N</arg_from_previous>
+      <include_subfolders>Y</include_subfolders>
+      <fields>
+        <field>
+          <name>${OUTPUT_DIR}</name>
+          <filemask>.+</filemask>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>128</xloc>
+      <yloc>144</yloc>
     </entry>
   </entries>
   <hops>
@@ -678,8 +706,17 @@ These static resources are referenced by &lt;script>, &lt;link> and &lt;img> tag
       <unconditional>N</unconditional>
     </hop>
     <hop>
+      <from>substitute-variables-in-parameters</from>
+      <to>Create ${OUTPUT_DIR} and Copy Template</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
       <from>START</from>
-      <to>substitute-variables-in-parameters</to>
+      <to>Clean OUTPUT_DIR</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -687,8 +724,8 @@ These static resources are referenced by &lt;script>, &lt;link> and &lt;img> tag
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>substitute-variables-in-parameters</from>
-      <to>Create ${OUTPUT_DIR} and Copy Template</to>
+      <from>Clean OUTPUT_DIR</from>
+      <to>substitute-variables-in-parameters</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

@@ -13,6 +13,11 @@
         <default_value>undefined_job_filename_dir</default_value>
         <description />
       </parameter>
+      <parameter>
+        <name>pdi_install_dir</name>
+        <default_value>UNDEFiNED</default_value>
+        <description>Where PDI is installed, to retrieve libjars (saxon)</description>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -434,7 +439,7 @@
     <created_user />
     <created_date>2013/06/11 17:51:33.223</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/09/03 12:05:37.715</modified_date>
+    <modified_date>2018/09/06 16:04:34.527</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -704,6 +709,167 @@
     </GUI>
   </step>
   <step>
+    <name>Avoid null results</name>
+    <type>ScriptValueMod</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+var idx = getInputRowMeta().indexOfValue("width");
+var width = row[idx];
+if (idx &lt; 0 || width == "") {
+	var width = 0;
+}
+
+idx = getInputRowMeta().indexOfValue("height");
+var height = row[idx];
+if (idx &lt; 0 || height == "") {
+	var height = 0;
+}
+
+idx = getInputRowMeta().indexOfValue("xloc");
+var xloc = row[idx];
+if (idx &lt; 0 || xloc == "") {
+	var xloc = 0;
+}
+
+idx = getInputRowMeta().indexOfValue("yloc");
+var yloc = row[idx];
+if (idx &lt; 0 || yloc == "") {
+	var xloc = 0;
+}
+</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>width</name>
+        <rename>width</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>height</name>
+        <rename>height</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>xloc</name>
+        <rename>xloc</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>yloc</name>
+        <rename>yloc</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>528</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Calculate total size of notepads</name>
+    <type>Calculator</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <calculation>
+      <field_name>max_width</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>xloc</field_a>
+      <field_b>width</field_b>
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>max_height</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>yloc</field_a>
+      <field_b>height</field_b>
+      <field_c />
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <calculation>
+      <field_name>input_extension</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a> </field_a>
+      <field_b />
+      <field_c />
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask />
+      <decimal_symbol />
+      <grouping_symbol />
+      <currency_symbol />
+    </calculation>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Calculator</name>
     <type>Calculator</type>
     <description />
@@ -968,6 +1134,58 @@
     </GUI>
   </step>
   <step>
+    <name>Check if job or trans</name>
+    <type>RegexEval</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <script>.+(\.k[jt][br])</script>
+    <matcher>input_file</matcher>
+    <resultfieldname>result</resultfieldname>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>N</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>extension</name>
+        <type>String</type>
+        <format />
+        <group />
+        <decimal />
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif />
+        <ifnull />
+        <trimtype>both</trimtype>
+        <currency />
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Combine streams</name>
     <type>JoinRows</type>
     <description />
@@ -1031,6 +1249,11 @@
       <name>${user.dir}/lib/</name>
       <filemask>saxon-.*\.jar</filemask>
       <exclude_filemask>.*dom.*</exclude_filemask>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>${pdi_install_dir}/lib</name>
+      <filemask>saxon-.*\.jar</filemask>
+      <exclude_filemask>.*dom.*</exclude_filemask>
       <file_required>Y</file_required>
       <include_subfolders>N</include_subfolders>
     </file>
@@ -1042,8 +1265,77 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>266</xloc>
-      <yloc>269</yloc>
+      <xloc>256</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Get highest (x,y) values</name>
+    <type>GroupBy</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore />
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname />
+    <give_back_row>Y</give_back_row>
+    <group>
+      <field>
+        <name>input_file</name>
+      </field>
+    </group>
+    <fields>
+      <field>
+        <aggregate>output_file</aggregate>
+        <subject>output_file</subject>
+        <type>FIRST</type>
+        <valuefield />
+      </field>
+      <field>
+        <aggregate>xslt_name</aggregate>
+        <subject>xslt_name</subject>
+        <type>FIRST</type>
+        <valuefield />
+      </field>
+      <field>
+        <aggregate>max_width</aggregate>
+        <subject>max_width</subject>
+        <type>MAX</type>
+        <valuefield />
+      </field>
+      <field>
+        <aggregate>max_height</aggregate>
+        <subject>max_height</subject>
+        <type>MAX</type>
+        <valuefield />
+      </field>
+      <field>
+        <aggregate>input_extension</aggregate>
+        <subject>input_extension</subject>
+        <type>FIRST</type>
+        <valuefield />
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1147,6 +1439,332 @@
     </GUI>
   </step>
   <step>
+    <name>Keep only the relevant fields</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>input_file</name>
+      </field>
+      <field>
+        <name>input_extension</name>
+      </field>
+      <field>
+        <name>output_file</name>
+      </field>
+      <field>
+        <name>xslt_name</name>
+      </field>
+      <field>
+        <name>max_width</name>
+      </field>
+      <field>
+        <name>max_height</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>528</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Parse notepads info for jobs</name>
+    <type>getXMLData</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <include>N</include>
+    <include_field>filename</include_field>
+    <rownum>N</rownum>
+    <addresultfile>N</addresultfile>
+    <namespaceaware>N</namespaceaware>
+    <ignorecomments>N</ignorecomments>
+    <readurl>N</readurl>
+    <validating>N</validating>
+    <usetoken>N</usetoken>
+    <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
+    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <rownum_field />
+    <encoding>UTF-8</encoding>
+    <file>
+      <name />
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>xloc</name>
+        <xpath>xloc</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>yloc</name>
+        <xpath>yloc</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>width</name>
+        <xpath>width</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>height</name>
+        <xpath>heigth</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <loopxpath>/job/notepads/notepad | /job/notepads</loopxpath>
+    <IsInFields>Y</IsInFields>
+    <IsAFile>Y</IsAFile>
+    <XmlField>input_file</XmlField>
+    <prunePath />
+    <shortFileFieldName />
+    <pathFieldName />
+    <hiddenFieldName />
+    <lastModificationTimeFieldName />
+    <uriNameFieldName />
+    <rootUriNameFieldName />
+    <extensionFieldName />
+    <sizeFieldName />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Parse notepads info for trans</name>
+    <type>getXMLData</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <include>N</include>
+    <include_field>filename</include_field>
+    <rownum>N</rownum>
+    <addresultfile>N</addresultfile>
+    <namespaceaware>N</namespaceaware>
+    <ignorecomments>N</ignorecomments>
+    <readurl>N</readurl>
+    <validating>N</validating>
+    <usetoken>N</usetoken>
+    <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
+    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <rownum_field />
+    <encoding>UTF-8</encoding>
+    <file>
+      <name />
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>xloc</name>
+        <xpath>xloc</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>yloc</name>
+        <xpath>yloc</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>width</name>
+        <xpath>width</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>height</name>
+        <xpath>heigth</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <loopxpath>/transformation/notepads/notepad | /transformation/notepads</loopxpath>
+    <IsInFields>Y</IsInFields>
+    <IsAFile>Y</IsAFile>
+    <XmlField>input_file</XmlField>
+    <prunePath />
+    <shortFileFieldName />
+    <pathFieldName />
+    <hiddenFieldName />
+    <lastModificationTimeFieldName />
+    <uriNameFieldName />
+    <rootUriNameFieldName />
+    <extensionFieldName />
+    <sizeFieldName />
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Parse the file according to its type</name>
+    <type>SwitchCase</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fieldname>extension</fieldname>
+    <use_contains>N</use_contains>
+    <case_value_type>String</case_value_type>
+    <case_value_format />
+    <case_value_decimal />
+    <case_value_group />
+    <default_target_step />
+    <cases>
+      <case>
+        <value>.kjb</value>
+        <target_step>Parse notepads info for jobs</target_step>
+      </case>
+      <case>
+        <value>.ktr</value>
+        <target_step>Parse notepads info for trans</target_step>
+      </case>
+    </cases>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>544</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Select values</name>
     <type>SelectValues</type>
     <description />
@@ -1160,27 +1778,21 @@
     <fields>
       <field>
         <name>input_file</name>
-        <rename />
       </field>
       <field>
         <name>input_file_extension</name>
-        <rename />
       </field>
       <field>
         <name>output_file</name>
-        <rename />
       </field>
       <field>
         <name>xslt_name</name>
-        <rename />
       </field>
       <field>
         <name>max_width</name>
-        <rename />
       </field>
       <field>
         <name>max_height</name>
-        <rename />
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -2588,625 +3200,11 @@
       <draw>Y</draw>
     </GUI>
   </step>
-  <step>
-    <name>Calculate total size of notepads</name>
-    <type>Calculator</type>
-    <description />
-    <distribute>N</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <calculation>
-      <field_name>max_width</field_name>
-      <calc_type>ADD</calc_type>
-      <field_a>xloc</field_a>
-      <field_b>width</field_b>
-      <field_c />
-      <value_type>Integer</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask />
-      <decimal_symbol />
-      <grouping_symbol />
-      <currency_symbol />
-    </calculation>
-    <calculation>
-      <field_name>max_height</field_name>
-      <calc_type>ADD</calc_type>
-      <field_a>yloc</field_a>
-      <field_b>height</field_b>
-      <field_c />
-      <value_type>Integer</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask />
-      <decimal_symbol />
-      <grouping_symbol />
-      <currency_symbol />
-    </calculation>
-    <calculation>
-      <field_name>input_extension</field_name>
-      <calc_type>CONSTANT</calc_type>
-      <field_a> </field_a>
-      <field_b />
-      <field_c />
-      <value_type>String</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask />
-      <decimal_symbol />
-      <grouping_symbol />
-      <currency_symbol />
-    </calculation>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>624</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Parse notepads info for trans</name>
-    <type>getXMLData</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <include>N</include>
-    <include_field>filename</include_field>
-    <rownum>N</rownum>
-    <addresultfile>N</addresultfile>
-    <namespaceaware>N</namespaceaware>
-    <ignorecomments>N</ignorecomments>
-    <readurl>N</readurl>
-    <validating>N</validating>
-    <usetoken>N</usetoken>
-    <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
-    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
-    <rownum_field />
-    <encoding>UTF-8</encoding>
-    <file>
-      <name />
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>xloc</name>
-        <xpath>xloc</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>yloc</name>
-        <xpath>yloc</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>width</name>
-        <xpath>width</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>height</name>
-        <xpath>heigth</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <loopxpath>/transformation/notepads/notepad | /transformation/notepads</loopxpath>
-    <IsInFields>Y</IsInFields>
-    <IsAFile>Y</IsAFile>
-    <XmlField>input_file</XmlField>
-    <prunePath />
-    <shortFileFieldName />
-    <pathFieldName />
-    <hiddenFieldName />
-    <lastModificationTimeFieldName />
-    <uriNameFieldName />
-    <rootUriNameFieldName />
-    <extensionFieldName />
-    <sizeFieldName />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>160</xloc>
-      <yloc>624</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Get highest (x,y) values</name>
-    <type>GroupBy</type>
-    <description />
-    <distribute>N</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <all_rows>N</all_rows>
-    <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore />
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>grp</prefix>
-    <add_linenr>N</add_linenr>
-    <linenr_fieldname />
-    <give_back_row>Y</give_back_row>
-    <group>
-      <field>
-        <name>input_file</name>
-      </field>
-    </group>
-    <fields>
-      <field>
-        <aggregate>output_file</aggregate>
-        <subject>output_file</subject>
-        <type>FIRST</type>
-        <valuefield />
-      </field>
-      <field>
-        <aggregate>xslt_name</aggregate>
-        <subject>xslt_name</subject>
-        <type>FIRST</type>
-        <valuefield />
-      </field>
-      <field>
-        <aggregate>max_width</aggregate>
-        <subject>max_width</subject>
-        <type>MAX</type>
-        <valuefield />
-      </field>
-      <field>
-        <aggregate>max_height</aggregate>
-        <subject>max_height</subject>
-        <type>MAX</type>
-        <valuefield />
-      </field>
-      <field>
-        <aggregate>input_extension</aggregate>
-        <subject>input_extension</subject>
-        <type>FIRST</type>
-        <valuefield />
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>624</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Keep only the relevant fields</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>input_file</name>
-        <rename />
-      </field>
-      <field>
-        <name>input_extension</name>
-        <rename />
-      </field>
-      <field>
-        <name>output_file</name>
-        <rename />
-      </field>
-      <field>
-        <name>xslt_name</name>
-        <rename />
-      </field>
-      <field>
-        <name>max_width</name>
-        <rename />
-      </field>
-      <field>
-        <name>max_height</name>
-        <rename />
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>528</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Check if job or trans</name>
-    <type>RegexEval</type>
-    <description />
-    <distribute>N</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <script>.+(\.k[jt][br])</script>
-    <matcher>input_file</matcher>
-    <resultfieldname>result</resultfieldname>
-    <usevar>N</usevar>
-    <allowcapturegroups>Y</allowcapturegroups>
-    <replacefields>N</replacefields>
-    <canoneq>N</canoneq>
-    <caseinsensitive>N</caseinsensitive>
-    <comment>N</comment>
-    <dotall>N</dotall>
-    <multiline>N</multiline>
-    <unicode>N</unicode>
-    <unix>N</unix>
-    <fields>
-      <field>
-        <name>extension</name>
-        <type>String</type>
-        <format />
-        <group />
-        <decimal />
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif />
-        <ifnull />
-        <trimtype>both</trimtype>
-        <currency />
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>96</xloc>
-      <yloc>416</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Parse the file according to its type</name>
-    <type>SwitchCase</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fieldname>extension</fieldname>
-    <use_contains>N</use_contains>
-    <case_value_type>String</case_value_type>
-    <case_value_format />
-    <case_value_decimal />
-    <case_value_group />
-    <default_target_step />
-    <cases>
-      <case>
-        <value>.kjb</value>
-        <target_step>Parse notepads info for jobs</target_step>
-      </case>
-      <case>
-        <value>.ktr</value>
-        <target_step>Parse notepads info for trans</target_step>
-      </case>
-    </cases>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>96</xloc>
-      <yloc>544</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Parse notepads info for jobs</name>
-    <type>getXMLData</type>
-    <description />
-    <distribute>N</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <include>N</include>
-    <include_field>filename</include_field>
-    <rownum>N</rownum>
-    <addresultfile>N</addresultfile>
-    <namespaceaware>N</namespaceaware>
-    <ignorecomments>N</ignorecomments>
-    <readurl>N</readurl>
-    <validating>N</validating>
-    <usetoken>N</usetoken>
-    <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
-    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
-    <rownum_field />
-    <encoding>UTF-8</encoding>
-    <file>
-      <name />
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>xloc</name>
-        <xpath>xloc</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>yloc</name>
-        <xpath>yloc</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>width</name>
-        <xpath>width</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>height</name>
-        <xpath>heigth</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <loopxpath>/job/notepads/notepad | /job/notepads</loopxpath>
-    <IsInFields>Y</IsInFields>
-    <IsAFile>Y</IsAFile>
-    <XmlField>input_file</XmlField>
-    <prunePath />
-    <shortFileFieldName />
-    <pathFieldName />
-    <hiddenFieldName />
-    <lastModificationTimeFieldName />
-    <uriNameFieldName />
-    <rootUriNameFieldName />
-    <extensionFieldName />
-    <sizeFieldName />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>208</xloc>
-      <yloc>464</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Avoid null results</name>
-    <type>ScriptValueMod</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script here
-
-var idx = getInputRowMeta().indexOfValue("width");
-var width = row[idx];
-if (idx &lt; 0 || width == "") {
-	var width = 0;
-}
-
-idx = getInputRowMeta().indexOfValue("height");
-var height = row[idx];
-if (idx &lt; 0 || height == "") {
-	var height = 0;
-}
-
-idx = getInputRowMeta().indexOfValue("xloc");
-var xloc = row[idx];
-if (idx &lt; 0 || xloc == "") {
-	var xloc = 0;
-}
-
-idx = getInputRowMeta().indexOfValue("yloc");
-var yloc = row[idx];
-if (idx &lt; 0 || yloc == "") {
-	var xloc = 0;
-}
-</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>width</name>
-        <rename>width</rename>
-        <type>Integer</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>Y</replace>
-      </field>
-      <field>
-        <name>height</name>
-        <rename>height</rename>
-        <type>Integer</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>Y</replace>
-      </field>
-      <field>
-        <name>xloc</name>
-        <rename>xloc</rename>
-        <type>Integer</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>Y</replace>
-      </field>
-      <field>
-        <name>yloc</name>
-        <rename>yloc</rename>
-        <type>Integer</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>Y</replace>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>528</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step_error_handling>
     <error>
-      <source_step>Parse notepads info for trans</source_step>
-      <target_step>Calculate total size of notepads</target_step>
-      <is_enabled>N</is_enabled>
+      <source_step>Parse notepads info for jobs</source_step>
+      <target_step />
+      <is_enabled>Y</is_enabled>
       <nr_valuename />
       <descriptions_valuename />
       <fields_valuename />
@@ -3216,9 +3214,9 @@ if (idx &lt; 0 || yloc == "") {
       <min_pct_rows />
     </error>
     <error>
-      <source_step>Parse notepads info for jobs</source_step>
-      <target_step>Calculator 2 2</target_step>
-      <is_enabled>Y</is_enabled>
+      <source_step>Parse notepads info for trans</source_step>
+      <target_step>Calculate total size of notepads</target_step>
+      <is_enabled>N</is_enabled>
       <nr_valuename />
       <descriptions_valuename />
       <fields_valuename />
